@@ -1,0 +1,109 @@
+<core:FragmentDefinition xmlns:m="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:t="sap.ui.table">
+
+    <m:VBox >
+        <t:Table id="myTable" visibleRowCount="7" rows="" selectionMode="MultiToggle" ariaLabelledBy="title" rowHeight="50px">
+
+            <t:columns>
+
+                <t:Column width="7rem">
+                    <m:Label text="Product Name" />
+                    <t:template>
+                        <m:Text text="" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                <t:Column width="6rem">
+                    <m:Label text="Part Number" />
+                    <t:template>
+                        <m:Text text="" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                <t:Column width="7.5rem">
+                    <m:Label text="Part Description" />
+                    <t:template>
+                        <m:Text text="" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                <t:Column width="18rem">
+                    <m:Label text="Current Supplier Price in Supplier Currency" />
+                    <t:template>
+                        <m:Input value=""/>
+                    </t:template>
+                </t:Column>
+                <t:Column width="18rem">
+                    <m:Label text="New Supplier Price in Supplier Currency" />
+                    <t:template>
+                        <m:Input value=""/>
+                    </t:template>
+                </t:Column>
+                <t:Column width="7rem">
+                    <m:Label text="Pricing Unit" />
+                    <t:template>
+                        <m:Text text="" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                <t:Column width="9rem">
+                    <m:Label text="Supplier Currency" />
+                    <t:template>
+                        <m:Text text="" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                <t:Column width="6rem">
+                    <m:Label text="UOM Code" />
+                    <t:template>
+                        <m:Text text="" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                <t:Column width="9rem">
+                    <m:Label text="Quantity Receipted" />
+                    <t:template>
+                        <m:Text text="" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                <t:Column width="20rem">
+                    <m:Label text="Original Total Extended Standard Material Cost" />
+                    <t:template>
+                        <m:Text text="" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                <t:Column width="18rem">
+                    <m:Label text="New Total Extended Standard Material Cost" />
+                    <t:template>
+                        <m:Text text="" wrapping="false" />
+                    </t:template>
+                </t:Column>
+                <t:Column width="6rem">
+                    <m:Label text="Total" />
+                    <t:template>
+                        <m:Text text="" wrapping="false" />
+                    </t:template>
+                </t:Column>
+
+
+
+
+
+            </t:columns>
+            <!-- <items>
+                <t:ColumnListItem>
+                    <cells>
+                        <Input value="" />
+                        <DatePicker value="{NewShipTo>/ShippingDate}" valueFormat="dd-MM-yyyy" displayFormat="dd-MM-yyyy" class="sigDatePicker" placeholder="Enter {i18n>ShippingDate}" editable="{parts:['oCommonModel>/taskName'], formatter:'.formatter.isEditForFillingForm'}" />
+                        
+
+
+                    </cells>
+                </t:ColumnListItem>
+            </items> -->
+        </t:Table>
+        <m:HBox visible="{= ${oAppModel>/Mode} === 'CREATE' ? true : false}">
+            <m:Button text="{i18n>ADD}" icon="sap-icon://add" press="onAddMaterial" class="sigBtnDefault sapUiSmallMarginEnd" type="Default"/>
+        </m:HBox>
+    </m:VBox>
+
+
+
+
+</core:FragmentDefinition>

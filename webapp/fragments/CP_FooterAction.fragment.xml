@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+    <Toolbar>
+        <ToolbarSpacer/>
+        <Button text="Cancel" type="Default" class="sigBtnDefault" press="onCancelProjectSave"/>
+        <Button text="Save" type="Emphasized" class="sigBtnEmphasized"  press="onCreateNewProj" />
+        <!-- <Button text="{i18n>SAVE_MAT_LIST}" type="Emphasized" class="sigBtnEmphasized" visible="{parts:['oAppModel>/CreateProjSelectedTab','Visibility>/hasTaskId'], formatter:'com.materialManagement.materialmanagement.model.formatter.getVisibleforMatList'}" press="onSaveMaterialList"/>
+        <Button text="{i18n>SAVE_MAT_DETAILS}" type="Emphasized" class="sigBtnEmphasized" visible="{parts:['oAppModel>/CreateProjSelectedTab','Visibility>/hasTaskId'], formatter:'com.materialManagement.materialmanagement.model.formatter.getVisibleforMatDetails'}" press="onSaveMaterialDetails"/>
+        <Button text="{i18n>START_PROCESS}" press="onStartProject" type="Emphasized" class="sigBtnEmphasized" visible="{parts:['oAppModel>/CreateProjSelectedTab','Visibility>/hasTaskId'], formatter:'com.materialManagement.materialmanagement.model.formatter.getVisibleforStartProcess'}"/>
+        <Button text="{oAppModel>/buttonText/approve}" press="onApproveReject" type="Emphasized" class="sigBtnEmphasized" visible="{parts:['oAppModel>/CreateProjSelectedTab','Visibility>/ApproveRejectBtn'], formatter:'com.materialManagement.materialmanagement.model.formatter.getVisibleforApproveReject'}"/>
+        <Button text="{oAppModel>/buttonText/reject}" press="onApproveReject" type="Emphasized" class="sigBtnEmphasized" visible="{parts:['oAppModel>/CreateProjSelectedTab','Visibility>/ApproveRejectBtn'], formatter:'com.materialManagement.materialmanagement.model.formatter.getVisibleforApproveReject'}"/>
+        <Button text="{i18n>syndicateOData}" press="onSyndicatetoSAP" type="Default" class="sigBtnDefault" visible="{parts:['oAppModel>/CreateProjSelectedTab','Visibility>/hasTaskId', 'Visibility>/syndicateOData'], formatter:'com.materialManagement.materialmanagement.model.formatter.getVisibleforSyndicateOData'}"/> -->
+    </Toolbar>
+</core:FragmentDefinition>

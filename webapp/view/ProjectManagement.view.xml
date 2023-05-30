@@ -1,0 +1,95 @@
+<mvc:View controllerName="com.svg.cwispm.controller.ProjectManagement"
+    xmlns:m="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:t="sap.ui.table"
+    xmlns:mvc="sap.ui.core.mvc">
+    <m:Page showHeader="false" enableScrolling="true" class="sigPage">
+        <m:content>
+            <m:VBox class="sapUiSmallMargin">
+                <m:Toolbar class="sigHideUnderline sigToolBarH2 sapUiTinyMarginBottom">
+                 <m:ToolbarSpacer/>
+                 <m:Button text="Create New Project" icon="sap-icon://add" type="Emphasized" press="onPressCreateNewProjectBtn" class=""/>
+                </m:Toolbar>
+                <t:Table visibleRowCount="7" rows="{oTable>/tableData}" selectionMode="MultiToggle" ariaLabelledBy="title" rowHeight="50px" alternateRowColors="true">
+
+                    <t:columns>
+
+                        <t:Column width="7rem">
+                            <m:Label text="Product Name" />
+                            <t:template>
+                                <m:Text text="{oTable>projectNumber}" wrapping="false" />
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="6rem">
+                            <m:Label text="Part Number" />
+                            <t:template>
+                                <m:Text text="{oTable>partNum}" wrapping="false" />
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="7.5rem">
+                            <m:Label text="Part Description" />
+                            <t:template>
+                                <m:Text text="{oTable>partDescription}" wrapping="false" />
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="18rem">
+                            <m:Label text="Current Supplier Price in Supplier Currency" />
+                            <t:template>
+                                <m:Input value="{oTable>currSupplierPriceSupplierCurrency}"/>
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="18rem">
+                            <m:Label text="New Supplier Price in Supplier Currency" />
+                            <t:template>
+                                <m:Input value="{oTable>newSupplierPriceSupplierCurrency}"/>
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="7rem">
+                            <m:Label text="Pricing Unit" />
+                            <t:template>
+                                <m:Text text="{oTable>pricingUnit}" wrapping="false" />
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="9rem">
+                            <m:Label text="Supplier Currency" />
+                            <t:template>
+                                <m:Text text="{oTable>supCurrency}" wrapping="false" />
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="6rem">
+                            <m:Label text="UOM Code" />
+                            <t:template>
+                                <m:Text text="{oTable>uomCode}" wrapping="false" />
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="9rem">
+                            <m:Label text="Quantity Receipted" />
+                            <t:template>
+                                <m:Input value="{oTable>quantityRecieved}"/>
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="20rem">
+                            <m:Label text="Original Total Extended Standard Material Cost" />
+                            <t:template>
+                                <m:Text text="{oTable>origSupplierNum}" wrapping="false" />
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="18rem">
+                            <m:Label text="New Total Extended Standard Material Cost" />
+                            <t:template>
+                                <m:Text text="{oTable>totalCostCurrSup}" wrapping="false" />
+                            </t:template>
+                        </t:Column>
+                        <t:Column width="6rem">
+                            <m:Label text="Total" />
+                            <t:template>
+                                <m:Text text="{oTable>totalCostNewSup}" wrapping="false" />
+                            </t:template>
+                        </t:Column>
+                    </t:columns>
+                </t:Table>
+            </m:VBox>
+        </m:content>
+    </m:Page>
+</mvc:View>

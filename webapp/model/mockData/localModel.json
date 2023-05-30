@@ -1,0 +1,127 @@
+{
+    "dataPPV": [
+        {
+            "option": "Yes",
+            "key": 1
+        },
+        {
+            "option": "No",
+            "key": 2
+        }
+    ],
+    "moduleName": [
+        {
+            "name": "Attachment Interface and Wheels"
+        },
+        {
+            "name": "Cabin"
+        },
+        {
+            "name": "Crop Care Specific"
+        },
+        {
+            "name": "Cabin"
+        },
+        {
+            "name": "Drive Train"
+        },
+        {
+            "name": "Electrics and Electronics"
+        }
+    ],
+    "intiativeTags": [
+        {
+            "option": "Ignite"
+        },
+        {
+            "option": "SBO_Initiative"
+        },
+        {
+            "option": "Test"
+        },
+        {
+            "option": "Test_initiative"
+        },
+        {
+            "option": "Test222"
+        },
+        {
+            "option": "Test_313"
+        },
+        {
+            "option": "Test_6"
+        }
+    ],
+    "intiativeType": [
+        {
+            "option": "Purchasing Direct"
+        },
+        {
+            "option": "Purchasing Indirect"
+        }
+    ],
+    "reasonCode": [
+        {
+            "option": "Incumbent Negotiation",
+            "key": "1"
+        },
+        {
+            "option": "Other",
+            "key": 2
+        }
+    ],
+    "reasonCodeDesc": [
+        {
+            "option": "Project Initiation",
+            "date": "Tue Aug 9 2022"
+        },
+        {
+            "option": "Negotiation Preparation Completed",
+            "date": "Sat Aug 13 2022"
+        },
+        {
+            "option": "Negotiation Kicked off",
+            "date": "Thu Aug 17 2022"
+        },
+        {
+            "option": "Negotiation Finalized",
+            "date": "Fri Aug 21 2022"
+        },
+        {
+            "option": "Saving Implemented",
+            "date": "Wed Aug 24 2022"
+        },
+        {
+            "option": "Fiscal Savings Start",
+            "date": "Sun Aug 27 2022"
+        }
+
+    ],
+    "supplierName": [
+        {
+            "data": "Aarrowcast,Inc."
+            
+        },
+        {
+            "data": "Adams Thermal Systems Inc"
+            
+        },
+        {
+            "data": "TriMark Corp"
+            
+        },
+        {
+            "data": "Centro,INC"
+            
+        },
+        {
+            "data": "Cope Plastics"
+            
+        },
+        {
+            "data": "MICO Incoporated"
+            
+        }
+
+    ]
+}

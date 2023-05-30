@@ -1,0 +1,24 @@
+<mvc:View controllerName="com.svg.cwispm.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:core="sap.ui.core"
+    xmlns:tnt="sap.tnt">
+    <tnt:ToolPage class="siToolPage">
+        <tnt:sideContent >
+            <tnt:SideNavigation id="sideNavigation" selectedKey="Welcome" itemSelect=".onItemSelect" class="sigSideNavigation">
+                <tnt:NavigationList class="sigSideNavList ">
+                    <tnt:NavigationListItem key="ProjectManagement" text="Project Management" icon="sap-icon://folder-blank" class="sigSideNavListItem"/>
+
+                    <tnt:NavigationListItem key="ProjectCreation" text="Project Creation" icon="sap-icon://home" class="sigSideNavListItem "/>
+
+                </tnt:NavigationList>
+            </tnt:SideNavigation>
+        </tnt:sideContent>
+        <tnt:mainContents>
+            <NavContainer id="side_Navigation_Content">
+            </NavContainer>
+        </tnt:mainContents>
+    </tnt:ToolPage>
+</mvc:View>   
+   

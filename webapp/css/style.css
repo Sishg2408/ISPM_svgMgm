@@ -1,0 +1,548 @@
+/* Enter your custom styles here */
+/* * {
+    font-family: 'SAP-icons',Roboto,sans-serif !important;
+} */
+.myTextField {
+    background-color: rgb(129, 123, 123);
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.sigSideNavigation {
+    width: 5.3rem !important;
+    box-shadow: 0px 8px 24px rgb(192 192 192 / 25%) !important;
+}
+
+.sapTntNavLIItem a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    outline: none;
+    display: grid !important;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    overflow: hidden !important;
+}
+
+
+.sap-desktop .sapTntToolPageAside+.sapTntToolPageMain,
+.sap-tablet .sapTntToolPageAside+.sapTntToolPageMain {
+    padding-left: 5.3rem !important;
+}
+
+.sap-desktop .sapTntToolPageAside,
+.sap-tablet .sapTntToolPageAside {
+    width: 5.3rem !important;
+
+}
+
+/* .sapTntNavLIItem {
+    background-color: #1d6baf !important;
+} */
+.sapTntNavLIItem .sapTntNavLIGroupIcon {
+    /* color: #ffffff !important; */
+    font-size: 1rem;
+}
+
+.sapTntNavLIItem .sapMText {
+    text-align: center !important;
+    white-space: break-spaces !important;
+    overflow: hidden !important;
+    font-size: 0.75rem !important;
+    font-weight: bold;
+}
+
+.sigSideNavList li .sapTntNavLIItem {
+    height: 4rem !important;
+}
+
+
+/* .sapTntNavLIItemSelected.sapTntNavLIItem {
+    background-color: #1a4b75 !important;
+} */
+
+.sapTntNavLI span.sapTntNavLIGroupIcon {
+    font-size: 1.2rem !important;
+}
+
+.sapTntNavLI span.sapTntNavLIGroupIcon:active {
+    color: #ffffff !important;
+}
+
+.sapTntNavLIGroup {
+    border-bottom: 0px !important;
+}
+
+.pageHeaderStyle {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.filterBackground {
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 10px rgb(162 159 159 / 25%);
+    border-radius: 0.5rem;
+}
+
+.textColor {
+    color: black;
+}
+
+.sigLabel {
+    padding: 0rem 0rem 0.5rem 0rem;
+    color: black;
+}
+
+.specialTextHighlight {
+    color: #3026B9 !important;
+    font-weight: bold;
+}
+
+.sapTntNavLIItemSelected.sapTntNavLIItem,
+.sapTntNavLIItemSelected {
+    background-color: #ffffff !important;
+    border-left: solid #3026B9;
+}
+
+.sapTntNavLIItem .sapTntNavLIGroupIcon {
+    color: #32363a !important;
+    font-size: 1rem;
+}
+
+.sapTntNavLIItem .sapTntNavLIGroupIcon {
+    font-size: 1rem;
+}
+
+.sapTntNavLIItemSelected.sapTntNavLIItem,
+.sapTntNavLIItemSelected .sapMText {
+    color: #3026B9 !important;
+}
+
+.sigBorderDesign {
+    box-shadow: 0 0 8px -2px #444444;
+    color: #3026B9 !important;
+}
+
+.sapTntNavLIItemSelected .sapTntNavLIGroupIcon {
+    color: #3026B9 !important;
+}
+
+.sigFilterBackground {
+    background-color: #fefefe;
+    border-radius: 0.5rem;
+    box-shadow: 0px 2px 10px rgb(162 159 159 / 25%);
+}
+
+.sigHideUnderline {
+    border-bottom: 0px !important;
+}
+
+
+.sigInputText .sapMInputBaseContentWrapper {
+    border-radius: 4px;
+    height: 2.1rem;
+}
+
+.sigInputText .sapMInputBaseIconContainer {
+    line-height: 2.1rem;
+}
+
+.sigComboBox .sapMInputBaseContentWrapper {
+    border-radius: 4px;
+    height: 2.1rem;
+}
+
+.sigComboBox .sapMInputBaseIcon {
+    line-height: 2.1rem;
+    color: #3d3d3e !important;
+}
+
+.sapMInputBaseIconPressed .sapMInputBaseIcon,
+.sapMInputBaseIconPressed .sapMInputBaseIcon:hover {
+    background: #3026B9
+}
+
+.sigDatePicker .sapMInputBaseIcon:hover {
+    color: black;
+}
+
+/* .sapMInputBase:not(.sapMInputBaseDisabled):not(.sapMInputBaseIconPressed) .sapMInputBaseIconContainer .sapMInputBaseIcon:active {
+    background-color: #3026B9;
+    color: #fff !important;
+}
+.sapMInputBase:not(.sapMFocus) .sapMInputBaseContentWrapper:not(.sapMInputBaseReadonlyWrapper):not(.sapMInputBaseContentWrapperState):not(.sapMInputBaseDisabledWrapper):hover {
+    border-color: black;
+}
+.sapMInputBaseContentWrapper:not(.sapMInputBaseReadonlyWrapper):not(.sapMInputBaseContentWrapperState):not(.sapMInputBaseDisabledWrapper):active {
+    border-color: #3026B9;
+    border-width: 2px;
+}
+.sapMInputBaseContentWrapper:not(.sapMInputBaseReadonlyWrapper):not(.sapMInputBaseContentWrapperState):not(.sapMInputBaseDisabledWrapper):focus {
+    border-color: #3026B9;
+    border-width: 2px;
+} */
+/* .sapMInputBaseContentWrapper::before {
+    border: 2px red solid;
+} */
+.sapMInputFocused .sapMFocus .sapMInputBaseContentWrapper {
+    border-width: 2px !important;
+}
+
+.sapMInputBase {
+    line-height: 1rem;
+    height: 2.1rem !important;
+}
+
+/* For Display Mode */
+.sigTable .sapMLIB .sapMInputBaseReadonly .sapMInputBaseContentWrapper {
+    border: none !important;
+    background: transparent;
+}
+
+
+
+/* .sigComboBox .sapMInputBaseIcon:active {
+    background: red;
+} */
+
+.sigTable thead th span {
+    font-weight: 550 !important;
+    font-size: 0.875rem !important;
+}
+
+.sigTable .sapMTableTH {
+    background: #DBE1F0 !important;
+    /* border-bottom: 1px dashed #e5e5e5; */
+    height: 54px !important;
+}
+
+.sigTable .sapMListTbl .sapMLIB {
+    display: table-row;
+    height: 2.75em;
+    background: #FFFFFF;
+}
+
+.sigTable .sapMLIB.sapMLIBActive .sapMText {
+    color: #3d3d3e;
+}
+
+.sigTable .sapMLIB.sapMLIBActive .sapMInputBaseInner {
+    color: #3d3d3e;
+}
+
+.sigTable .sapMLIB.sapMLIBActive .sapMComboBoxInner {
+    color: #3d3d3e;
+}
+
+.sigTable .sapMListTbl .sapMLIB:hover {
+    background: #c0d2fe4a;
+}
+
+.sigTable .sapMLIBShowSeparator>td {
+    border-top: 1px dashed #e5e5e5;
+    padding: 16px;
+}
+
+.sigTable .sapMColumnHeader {
+    padding-left: 16px !important;
+}
+
+.sigTitle {
+    font-weight: bold;
+    color: black;
+}
+
+/* SIG Button Style */
+
+.sigBtnEmphasized span.sapMBtnInner {
+    height: 2.1rem;
+    font-weight: 500;
+    background-color: #3026B9;
+    border-color: #3026B9;
+}
+
+.sigBtnEmphasized span.sapMBtnInner .sapUiIcon {
+    line-height: 1.8rem;
+}
+
+.sigBtnEmphasized .sapMBtnContent {
+    line-height: 1.8rem !important;
+}
+
+.sigBtnEmphasized:hover>.sapMBtnHoverable.sapMBtnEmphasized:not(.sapMBtnActive):not(.sapMToggleBtnPressed) {
+    background-color: #3026B9;
+    border-color: #3026B9;
+}
+
+.sigBtnDefault span.sapMBtnInner {
+    height: 2.1rem;
+    font-weight: 500;
+    border-color: #3026B9;
+}
+
+.sigBtnDefault span.sapMBtnInner .sapUiIcon {
+    line-height: 1.8rem;
+    color: #3026B9;
+}
+
+.sigBtnDefault .sapMBtnContent {
+    line-height: 1.8rem !important;
+    color: #3026B9;
+}
+
+.sapMBtn {
+    height: 2.75rem !important;
+}
+
+.sigPage {
+    background-color: #FAFCFF;
+}
+
+.sigToolBarH5 {
+    height: 2.5rem !important;
+    background-color: #DBE1F0;
+    ;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.sigToolBarH5NoBackground {
+    height: 2.5rem !important;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.sigToolBarH2 {
+    height: 2.5rem !important;
+    margin-left: 0px !important;
+    padding-left: 0px !important;
+}
+
+.sigOverflowToolBar {
+    height: 2.75rem !important;
+}
+
+.sigDatePicker .sapMInputBaseContentWrapper {
+    border-radius: 4px;
+    height: 2.1rem;
+}
+
+.sigDatePicker .sapMInputBaseIcon {
+    line-height: 2.1rem;
+    color: #3d3d3e !important;
+}
+
+.sapUiCalItem.sapUiCalItemNow {
+    border-color: rgb(183, 28, 28);
+}
+
+.sapUiCalItem.sapUiCalItemSel:not(.sapUiCalItemSelBetween) {
+    background-color: rgb(183, 28, 28);
+}
+
+.sapMInputBaseIcon:hover {
+    color: black !important;
+    /* background-color: white !important; */
+}
+
+.sigIconTabBar {
+    box-shadow: 0px 8px 24px rgb(192 192 192 / 25%) !important;
+}
+
+.sigIconTabBar .sapMITBSelected .sapMITBContentArrow::after {
+    background: #3026B9;
+}
+
+.sigIconTabBar .sapMITBTextOnly .sapMITBFilterDefault.sapMITBSelected .sapMITBText {
+    color: #3026B9 !important;
+
+}
+
+.sigIconTabBar .sapMITBContent {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.sigIconTabBar .sapMITH {
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.sigIconTabBar .sapMITH.sapMITBInLine .sapMITBHead .sapMITBFilter .sapMITBFilterWrapper .sapMITBText {
+    line-height: 2rem;
+    color: black;
+}
+
+.sigIconTabBar .sapMITH .sapMITHEndOverflow .sapMITBItem {
+    border-radius: 0.5rem !important;
+    border-color: #3026B9;
+
+}
+
+.sigIconTabBar .sapMITH .sapMITHEndOverflow .sapMITBText {
+    color: #3026B9;
+}
+
+
+.sigGenericTile {
+    /* background: linear-gradient(180.76deg, rgb(193, 220, 255) -113.11%, rgba(255, 255, 255, 0) 198.03%) !important;
+    filter: drop-shadow(rgba(112, 112, 112, 0.25) 0px 1px 3px) !important; */
+    width: 17rem !important;
+}
+
+.sigGenericTile:hover:not(.sapMGTPressActive) {
+    box-shadow: none;
+}
+
+.sigGenericTile .sapMGTContent .sapMTileCnt .sapMTileCntContent .sapMNC .sapMNCLargeFontSize {
+    font-size: 1.2rem !important;
+    color: rgb(183, 28, 28);
+}
+
+.sigGenericTile .sapMGTContent .sapMTileCnt .sapMTileCntContent {
+    height: 2rem !important;
+}
+
+.sigGenericTile * {
+    cursor: text !important;
+}
+
+.sigGenericTile .OneByHalf * {
+    cursor: text !important;
+}
+
+.sigCustomTile {
+    background: #aeaeae;
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 10px rgb(162 159 159 / 25%);
+    align-items: center;
+    border-radius: 10px;
+    flex-direction: column;
+    justify-content: center;
+    width: 17rem;
+}
+
+.sigTileLabel {
+    font-size: 1.5rem !important;
+    color: rgb(3, 3, 3);
+}
+
+.sigTileText {
+    font-size: 1.4rem !important;
+    color: rgb(183, 28, 28);
+}
+
+.sigFileUploader .sapMInputBaseContentWrapper {
+    border-radius: 4px;
+    height: 2.1rem;
+}
+
+.sigFileUploader .sapMBtnInner {
+    height: 2.1rem;
+    border-radius: 4px;
+}
+
+.sigFileUploader .sapMInputBase {
+    line-height: 2rem;
+    border-radius: 4px;
+}
+
+.sigFileUploader .sapMBtnContent {
+    line-height: 1.8rem !important;
+}
+
+.sigNotificationDetails {
+    background: #ffffff;
+    box-shadow: 0px 2px 10px rgb(162 159 159 / 25%);
+    border-radius: 10px;
+}
+
+.sigNotificationLabel {
+    /* font-size: 1rem !important; */
+    color: rgb(3, 3, 3);
+    font-weight: bold;
+}
+
+.sigNotificationText {
+    /* font-size: 1rem !important; */
+    color: rgb(183, 28, 28);
+}
+
+.sigCheckBox {
+    /* line-height: 4.1rem !important; */
+    height: 2.6rem !important;
+}
+
+.sigCheckBox .sapMLabel {
+    color: black !important;
+}
+
+html.sap-desktop .sapMBtn:focus>.sapMFocusable {
+    outline: none;
+    outline-offset: -0.1875rem
+}
+
+.sapMFocus.sapMInputBase .sapMInputBaseContentWrapper:not(.sapMInputBaseDisabledWrapper)::before {
+    border: 1px #3026B9 solid;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border-radius: 3px;
+}
+
+.sigFeedInput .sapMFeedIn {
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+}
+
+.sigFeedInput .sapMFeedIn .sapMBtn {
+    bottom: 1.2rem;
+}
+
+.sigFeedInput .sapMFeedIn .sapMFeedInContainer {
+    border-radius: 4px;
+    background-color: #e8eeff !important;
+}
+
+.sigFeedInput .sapMFeedIn .sapMTextArea .sapMTextAreaInner {
+    background-color: #e8eeff !important;
+}
+
+.sigFileUploadSet .sapMBtnInner {
+    height: 2.1rem;
+}
+
+.sigFileUploadSet .sapUiFup.sapMBarChild {
+    height: 2.7rem;
+}
+
+.sigFileUploadSet .sapMInputBaseHeightMargin {
+    margin: 0.55rem 0;
+}
+
+.sigFileUploadSet .sapMBtnIcon {
+    line-height: 2rem;
+}
+
+.sapMLnk:visited {
+    color: #3026B9;
+}
+
+.sapMLnk {
+    color: #3026B9;
+}
+
+/* radio buttom */
+.sapUiSizeCompact .sapMListTblSelCol,
+.sapUiSizeCompact .sapMListTblSelCol>.sapMLIBSelectM,
+.sapUiSizeCompact .sapMListTblSelCol>.sapMLIBSelectS,
+.sapUiSizeCompact .sapMListTblHasNav .sapMListTblNavCol {
+    width: 4rem;
+}

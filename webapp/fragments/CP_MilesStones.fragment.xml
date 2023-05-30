@@ -1,0 +1,58 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core">
+    <l:Grid defaultSpan="XL3 L3 M6 S12" class="sapUiSizeCompact sapUiSmallMargin">
+
+        <VBox>
+            <Label text="Reason Code" class="sigLabel"/>
+            <ComboBox id="idDropdown" width="100%" change="onChange" value="Incumbent Negotiation"  showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/reasonCode}" >
+                <core:ListItem key="{oLookUpModel>key}" text="{oLookUpModel>option}" additionalText=""/>
+            </ComboBox>
+        </VBox>
+        <ToolbarSpacer/>
+        <VBox>
+            <Label text="Supplier Name" class="sigLabel"/>
+            <ComboBox width="100%" selectionChange="onSelectPrimaryPlant"  showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/supplierName}">
+                <core:ListItem  text="{oLookUpModel>data}"/>
+            </ComboBox>
+        </VBox>
+        <VBox>
+        
+    </VBox>
+
+    </l:Grid>
+    <VBox>
+        <Table id="idTable" items="{Milestone>/reasonCodeDesc}">
+
+            <columns>
+
+                <Column>
+                    <header>
+                        <Label text="Material Description" />
+                    </header>
+                </Column>
+
+                <Column>
+                    <header>
+                        <Label text="ReleaseDate" />
+                    </header>
+                </Column>
+
+
+
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Input value="{Milestone>option}" />
+                        <DatePicker value="{Milestone>date}" valueFormat="yyyy-MM-dd hh:mm:ss.ms" displayFormat="EEE MMM d yyyy" class="sigDatePicker" placeholder="Enter {i18n>ShippingDate}" change="onDateChange" />
+                    </cells>
+                    
+                </ColumnListItem>
+                
+            </items>
+        </Table>
+    </VBox>
+    
+
+</core:FragmentDefinition>
