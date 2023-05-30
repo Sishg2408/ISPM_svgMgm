@@ -16,7 +16,7 @@
                     <t:columns>
 
                         <t:Column width="7rem">
-                            <m:Label text="Project Name" />
+                            <m:Label text="Project Number" />
                             <t:template>
                                 <m:Text text="{oTable>projectNumber}" wrapping="false" />
                             </t:template>

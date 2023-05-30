@@ -14,7 +14,7 @@
                         <IconTabFilter text="2. Milestones" key="MatList">
                             <core:Fragment fragmentName="com.svg.cwispm.fragments.CP_MilesStones" type="XML"/>
                         </IconTabFilter>
-                        <IconTabFilter text="4. Parts Summary" key="MatDetail">
+                        <IconTabFilter text="3. Parts Summary" key="MatDetail">
                             <core:Fragment fragmentName="com.svg.cwispm.fragments.CP_PartSummary" type="XML"/>
                         </IconTabFilter>
                     </items>
