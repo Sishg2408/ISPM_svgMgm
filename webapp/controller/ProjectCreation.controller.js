@@ -163,8 +163,8 @@ sap.ui.define([
             oPartSummary: function(oEvent){
                 var that = this,
                 //var oTableModel = this.oTableModel;
-                    oTableModel = this.getOwnerComponent().getModel("oTableModel"),
-                    url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/getPartsDataBySupplierNumber?supplierNum=5";
+                    oTableModel = this.getOwnerComponent().getModel("oTable"),
+                    url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/getPartsDataBySupplierNumber?supplierNum=TA0017";
               
 
                 jQuery.ajax({
@@ -172,7 +172,7 @@ sap.ui.define([
                     method: "GET",
                     success: function (data) {
                         oTableModel.setProperty("/getPartsDataBySupplierNumber", data);
-                        oTableModel.refresh();
+                        // oTableModel.refresh();
                     },
                     error: function (error) { }
                 });

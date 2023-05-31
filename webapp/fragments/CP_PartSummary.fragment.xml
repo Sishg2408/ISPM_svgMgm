@@ -4,7 +4,7 @@
     xmlns:t="sap.ui.table">
 
     <m:VBox >
-        <t:Table id="myTable" visibleRowCount="7" selectionMode="MultiToggle" ariaLabelledBy="title" rowHeight="50px" rows="{oTableModel>/getPartsDataBySupplierNumber}">
+        <t:Table id="myTable" visibleRowCount="7" selectionMode="MultiToggle" ariaLabelledBy="title" rowHeight="50px" rows="{oTable>/getPartsDataBySupplierNumber}">
 
             <t:columns>
 
@@ -17,19 +17,19 @@
                 <t:Column width="6rem">
                     <m:Label text="Part Number" />
                     <t:template>
-                        <m:Text text="{oTableModel>partNum}" wrapping="false" />
+                        <m:Text text="{oTable>partNum}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="7.5rem">
                     <m:Label text="Part Description" />
                     <t:template>
-                        <m:Text text="{oTableModel>partDesc}" wrapping="false" />
+                        <m:Text text="{oTable>partDesc}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="18rem">
                     <m:Label text="Current Supplier Price in Supplier Currency" />
                     <t:template>
-                         <m:Text text="{oTableModel>partDesc}" wrapping="false" />
+                         <m:Text text="{oTable>partDesc}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="18rem">
@@ -41,19 +41,19 @@
                 <t:Column width="7rem">
                     <m:Label text="Pricing Unit" />
                     <t:template>
-                        <m:Text text="{oTableModel>suppCurrency}" wrapping="false" />
+                        <m:Text text="{oTable>suppCurrency}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="9rem">
                     <m:Label text="Supplier Currency" />
                     <t:template>
-                        <m:Text text="{oTableModel>suppCurrency}" wrapping="false" />
+                        <m:Text text="{oTable>suppCurrency}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="6rem">
                     <m:Label text="UOM Code" />
                     <t:template>
-                        <m:Text text="{oTableModel>uom}" wrapping="false" />
+                        <m:Text text="{oTable>uom}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="9rem">
