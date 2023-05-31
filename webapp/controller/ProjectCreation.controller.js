@@ -2,12 +2,13 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     'sap/m/MessageToast',
     "sap/m/MessageBox",
-    "sap/ui/model/json/JSONModel"
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/core/Fragment"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, MessageToast, MessageBox, JSONModel) {
+    function (Controller, MessageToast, MessageBox, JSONModel,Fragment) {
         "use strict";
 
         return Controller.extend("com.svg.cwispm.controller.ProjectCreation", {
@@ -16,6 +17,7 @@ sap.ui.define([
                 this.router = this.getOwnerComponent().getRouter();
                 var data = this.getOwnerComponent().getModel("oLookUpModel").getData()["reasonCodeDesc"];
                 this.getOwnerComponent().getModel("Milestone").setProperty("/reasonCodeDesc", data);
+                this.oPartSummary();
 
 
             },
@@ -157,6 +159,25 @@ sap.ui.define([
                     };
                 this.getOwnerComponent().getModel("MaterialList").setProperty("/Materials", materialListTableData);
             },
+
+            oPartSummary: function(oEvent){
+                var that = this,
+                //var oTableModel = this.oTableModel;
+                    oTableModel = this.getOwnerComponent().getModel("oTableModel"),
+                    url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/getPartsDataBySupplierNumber?supplierNum=5";
+              
+
+                jQuery.ajax({
+                    url: url,
+                    method: "GET",
+                    success: function (data) {
+                        oTableModel.setProperty("/getPartsDataBySupplierNumber", data);
+                        oTableModel.refresh();
+                    },
+                    error: function (error) { }
+                });
+
+            }
 
 
 
