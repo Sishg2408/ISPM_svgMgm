@@ -46,7 +46,7 @@
             <VBox>
                 <Label text="Module Name" class="sigLabel"/>
                 <ComboBox width="100%" id='idModuleName' selectedKey="" showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/moduleName}">
-                    <core:ListItem key="{oLookUpModel>key}" text="{oLookUpModel>name}" />
+                    <core:ListItem key="{oLookUpModel>name}" text="{oLookUpModel>name}" />
                 </ComboBox>
             </VBox>
             <VBox>
