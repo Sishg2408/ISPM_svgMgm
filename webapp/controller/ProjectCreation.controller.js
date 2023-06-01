@@ -22,6 +22,7 @@ sap.ui.define([
 
             },
             onCreateNewProj: function (oEvent) {
+                //validation
                 var requiredInputs = ['idProjectOwner', 'idProjectName', 'idCnfFact','idPPVgen','idInBudget','idProjectCreator', 'idQualitylead', 'idPCOlead', 'idCommoditylead', 'idEnglead'];
                 var passedValidation = this.validateForm(requiredInputs);
                 if (passedValidation === false) {
