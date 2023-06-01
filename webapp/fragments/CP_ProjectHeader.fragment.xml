@@ -5,19 +5,19 @@
         <l:Grid defaultSpan="XL3 L3 M6 S12" class="sapUiSizeCompact sapUiSmallMargin">
             <VBox>
                 <Label text="Project Owner" class="sigLabel" required="true"/>
-                <Input value="{ProjectHeader>projectOwner}" class="sigInputText" width="100%" />
+                <Input id="idProjectOwner" class="sigInputText" width="100%" />
             </VBox>
             <VBox>
                 <Label text="Project Name" class="sigLabel" required="true"/>
-                <Input value="{ProjectHeader>projectName}" class="sigInputText" width="100%" />
+                <Input id="idProjectName" class="sigInputText" width="100%" />
             </VBox>
             <VBox>
                 <Label text="Confidence Factor %" class="sigLabel" required="true"/>
-                <Input value="{ProjectHeader>cnfFact}" class="sigInputText" width="100%" />
+                <Input id="idCnfFact" class="sigInputText" width="100%" />
             </VBox>
             <VBox>
                 <Label text="Permanent Saving" class="sigLabel"/>
-                <ComboBox width="100%" change="onComboBoxChange" value="" selectedKey="" items="{oLookUpModel>/dataPPV}" showSecondaryValues="true" class="sigComboBox">
+                <ComboBox width="100%" change="onComboBoxChange" id='idPrmntsave' selectedKey="" items="{oLookUpModel>/PermSav}" showSecondaryValues="true" class="sigComboBox">
                     <core:ListItem key="{oLookUpModel>key}" text="{oLookUpModel>option}" additionalText=""/>
                 </ComboBox>
             </VBox>
@@ -27,62 +27,62 @@
             </VBox>
             <VBox>
                 <Label text="Will it generate PPV" class="sigLabel" required="true"/>
-                <ComboBox width="100%" selectionChange="onSelectPrimaryPlant" value="" selectedKey="" showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/dataPPV}">
-                    <core:ListItem text="{oLookUpModel>option}"/>
+                <ComboBox width="100%" id='idPPVgen' selectedKey="" showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/dataPPV}">
+                    <core:ListItem key="{oLookUpModel>key}" text="{oLookUpModel>option}"/>
                 </ComboBox>
             </VBox>
             <VBox>
                 <Label text="Change in Dual Sourcing Share of Business" class="sigLabel"/>
-                <ComboBox width="100%" selectionChange="onSelectPrimaryPlant" value="{ProjectHeader>primaryPlant}" valueState="{ProjectHeader>/valueState/primaryPlant}" selectedKey="{ProjectHeader>primaryPlant}" showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/dataPPV}">
-                    <core:ListItem key="{oAppModel>plantNo}" text="{oLookUpModel>option}" additionalText="{oAppModel>plantDescription}"/>
+                <ComboBox width="100%" id='idDualSrcng' selectedKey="" showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/dualSourcing}">
+                    <core:ListItem key="{oLookUpModel>key}" text="{oLookUpModel>option}" />
                 </ComboBox>
             </VBox>
             <VBox>
                 <Label text="Already Included In Budget?" class="sigLabel" required="true"/>
-                <ComboBox width="100%" selectionChange="onSelectPrimaryPlant" value="{ProjectHeader>primaryPlant}" valueState="{ProjectHeader>/valueState/primaryPlant}" selectedKey="{ProjectHeader>primaryPlant}" showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/dataPPV}">
-                    <core:ListItem key="{oAppModel>plantNo}" text="{oLookUpModel>option}" additionalText="{oAppModel>plantDescription}"/>
+                <ComboBox width="100%" id='idInBudget' selectedKey="" showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/alreadyBudget}">
+                    <core:ListItem key="{oLookUpModel>key}" text="{oLookUpModel>option}"/>
                 </ComboBox>
             </VBox>
             <VBox>
                 <Label text="Module Name" class="sigLabel"/>
-                <ComboBox width="100%" selectionChange="onSelectPrimaryPlant" value="" selectedKey="" showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/moduleName}">
-                    <core:ListItem key="" text="{oLookUpModel>name}" additionalText=""/>
+                <ComboBox width="100%" id='idModuleName' selectedKey="" showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/moduleName}">
+                    <core:ListItem key="{oLookUpModel>key}" text="{oLookUpModel>name}" />
                 </ComboBox>
             </VBox>
             <VBox>
                 <Label text="Project Creator" class="sigLabel" required="true"/>
-                <Input value="{ProjectHeader>projectDesc}" class="sigInputText" width="100%" valueState="{ProjectHeader>/valueState/projectDesc}" editable="{= ${oAppModel>/Mode} === 'CREATE' ? true : false}"/>
+                <Input id="idProjectCreator" class="sigInputText" width="100%" valueState="{ProjectHeader>/valueState/projectDesc}" editable="{= ${oAppModel>/Mode} === 'CREATE' ? true : false}"/>
             </VBox>
             <VBox>
                 <Label text="Quality Lead" class="sigLabel" required="true"/>
-                <Input value="{ProjectHeader>projectDesc}" class="sigInputText" width="100%" valueState="{ProjectHeader>/valueState/projectDesc}" editable="{= ${oAppModel>/Mode} === 'CREATE' ? true : false}"/>
+                <Input id="idQualitylead" class="sigInputText" width="100%" valueState="{ProjectHeader>/valueState/projectDesc}" editable="{= ${oAppModel>/Mode} === 'CREATE' ? true : false}"/>
             </VBox>
             <VBox>
                 <Label text="PCO Lead" class="sigLabel" required="true"/>
-                <Input value="{ProjectHeader>projectDesc}" class="sigInputText" width="100%" valueState="{ProjectHeader>/valueState/projectDesc}" editable="{= ${oAppModel>/Mode} === 'CREATE' ? true : false}"/>
+                <Input id="idPCOlead" class="sigInputText" width="100%" valueState="{ProjectHeader>/valueState/projectDesc}" editable="{= ${oAppModel>/Mode} === 'CREATE' ? true : false}"/>
             </VBox>
             <VBox>
                 <Label text="Commodity Lead" class="sigLabel" required="true"/>
-                <Input value="{ProjectHeader>projectDesc}" class="sigInputText" width="100%" valueState="{ProjectHeader>/valueState/projectDesc}" editable="{= ${oAppModel>/Mode} === 'CREATE' ? true : false}"/>
+                <Input id="idCommoditylead" class="sigInputText" width="100%" valueState="{ProjectHeader>/valueState/projectDesc}" editable="{= ${oAppModel>/Mode} === 'CREATE' ? true : false}"/>
             </VBox>
             <VBox>
                 <Label text="Engineering Lead" class="sigLabel" required="true"/>
-                <Input value="{ProjectHeader>projectDesc}" class="sigInputText" width="100%" valueState="{ProjectHeader>/valueState/projectDesc}" editable="{= ${oAppModel>/Mode} === 'CREATE' ? true : false}"/>
+                <Input id="idEnglead" class="sigInputText" width="100%" valueState="{ProjectHeader>/valueState/projectDesc}" editable="{= ${oAppModel>/Mode} === 'CREATE' ? true : false}"/>
             </VBox>
             <VBox>
                 <Label text="Created Date" class="sigLabel" required="false" />
-                <DatePicker value="{NewShipTo>/ShippingDate}" valueFormat="dd-MM-yyyy" displayFormat="dd-MM-yyyy" class="sigDatePicker" placeholder="Enter {i18n>ShippingDate}" editable="{parts:['oCommonModel>/taskName'], formatter:'.formatter.isEditForFillingForm'}" />
+                <DatePicker value="{NewShipTo>/ShippingDate}" id="idCreatedDate" valueFormat="dd-MM-yyyy" displayFormat="dd-MM-yyyy" class="sigDatePicker" placeholder="Enter {i18n>ShippingDate}" editable="{parts:['oCommonModel>/taskName'], formatter:'.formatter.isEditForFillingForm'}" />
             </VBox>
             <VBox>
                 <Label text="Initiative Type" class="sigLabel"/>
-                <ComboBox width="100%" selectionChange="onSelectPrimaryPlant" value="" selectedKey="" showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/intiativeType}">
-                    <core:ListItem key="" text="{oLookUpModel>option}" additionalText=""/>
+                <ComboBox width="100%" id='idInitiativeType' selectedKey="" showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/intiativeType}">
+                    <core:ListItem key="{oLookUpModel>key}" text="{oLookUpModel>option}"/>
                 </ComboBox>
             </VBox>
             <VBox>
                 <Label text="Initiative Tags" class="sigLabel"/>
-                <ComboBox width="100%" selectionChange="onSelectPrimaryPlant" value="" selectedKey="{ProjectHeader>primaryPlant}" showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/intiativeTags}">
-                    <core:ListItem key="" text="{oLookUpModel>option}" additionalText=""/>
+                <ComboBox width="100%" id='idInitiativeTag' selectedKey="" showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/intiativeTags}">
+                    <core:ListItem key="{oLookUpModel>key}" text="{oLookUpModel>option}"/>
                 </ComboBox>
             </VBox>
             <VBox>

@@ -1,63 +1,108 @@
 {
-    "dataPPV": [
+    "PermSav": [
         {
             "option": "Yes",
-            "key": 1
+            "key": "yes"
         },
         {
             "option": "No",
-            "key": 2
+            "key": "no"
+        }
+    ],
+    "dataPPV": [
+        {
+            "option": "Yes",
+            "key": "yes"
+        },
+        {
+            "option": "No",
+            "key": "no"
+        }
+    ],
+    "dualSourcing": [
+        {
+            "option": "Yes",
+            "key": "yes"
+        },
+        {
+            "option": "No",
+            "key": "no"
+        }
+    ],
+    "alreadyBudget": [
+        {
+            "option": "Yes",
+            "key": "yes"
+        },
+        {
+            "option": "No",
+            "key": "no"
         }
     ],
     "moduleName": [
         {
-            "name": "Attachment Interface and Wheels"
+            "name": "Attachment Interface and Wheels",
+            "key": "Attachment Interface and Wheels"
         },
         {
-            "name": "Cabin"
+            "name": "Cabin",
+            "key": "Cabin"
         },
         {
-            "name": "Crop Care Specific"
+            "name": "Crop Care Specific",
+            "key": "Crop Care Specific"
         },
         {
-            "name": "Cabin"
+            "name": "Cabin",
+            "key": "Cabin"
         },
         {
-            "name": "Drive Train"
+            "name": "Drive Train",
+            "key": "Drive Train"
         },
         {
-            "name": "Electrics and Electronics"
+            "name": "Electrics and Electronics",
+            "key": "Electrics and Electronics"
         }
     ],
     "intiativeTags": [
         {
-            "option": "Ignite"
+            "option": "Ignite",
+            "key": "Ignite"
         },
         {
-            "option": "SBO_Initiative"
+            "option": "SBO_Initiative",
+            "key": "SBO_Initiative"
         },
         {
-            "option": "Test"
+            "option": "Test",
+            "key": "Test"
         },
         {
-            "option": "Test_initiative"
+            "option": "Test_initiative",
+            "key": "Test_initiative"
         },
         {
-            "option": "Test222"
+            "option": "Test222",
+            "key": "Test222"
         },
         {
-            "option": "Test_313"
+            "option": "Test_313",
+            "key": "Test_313"
         },
         {
-            "option": "Test_6"
+            "option": "Test_6",
+            "key": "Test_6"
         }
     ],
     "intiativeType": [
         {
-            "option": "Purchasing Direct"
+            "option": "Purchasing Direct",
+            "key": "Purchasing Direct"
         },
         {
-            "option": "Purchasing Indirect"
+            "option": "Purchasing Indirect",
+            "key": "Purchasing Indirect"
         }
     ],
     "reasonCode": [
