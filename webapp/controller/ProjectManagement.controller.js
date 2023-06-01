@@ -11,8 +11,8 @@ sap.ui.define(
                 this.router = this.getOwnerComponent().getRouter();
             },
             tableData:function(){
-                var that = this,
-                 oTable = this.getOwnerComponent().getModel("oTable"),
+                var that = this;
+                var oTable = this.getOwnerComponent().getModel("oTable"),
                     url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/getAllProjectItm";
                 jQuery.ajax({
                     method: "GET",

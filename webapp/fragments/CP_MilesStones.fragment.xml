@@ -28,7 +28,7 @@
 
                 <Column>
                     <header>
-                        <Label text="Material Description" />
+                        <Label text="Milestone Description" />
                     </header>
                 </Column>
 
