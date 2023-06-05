@@ -26,7 +26,15 @@ sap.ui.define([
 
             },
             onCreateNewProj: function (oEvent) {
+                //validation
+                var requiredInputs = ['idProjectOwner', 'idProjectName', 'idCnfFact','idPPVgen','idInBudget','idProjectCreator', 'idQualitylead', 'idPCOlead', 'idCommoditylead', 'idEnglead'];
+                var passedValidation = this.validateForm(requiredInputs);
+                if (passedValidation === false) {
+                    MessageBox.error("Please fill all fields")
+                    return false;
+                }
                 var url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/saveProjectHeader",
+                    that = this,
                     oView = this.getView(),
                     // oProjectHeaderModel = this.getOwnerComponent().getModel("ProjectHeader"),
                     // oProjHeadData = oProjectHeaderModel.getData(),
@@ -40,15 +48,15 @@ sap.ui.define([
                     "acreIdea": "Yes",
                     "acreSupplierNum": null,
                     "countryCode": null,
-                    "dualSrcng": "NO",
-                    "engLead": null,
+                    "dualSrcng": oView.byId("idDualSrcng").getSelectedKey(),
+                    "engLead": oView.byId("idEnglead").getValue(),
                     "isBcc": "NO",
-                    "isGenppv": "YES",
-                    "isPrmntsav": "YES",
-                    "noMntRec": 0,
+                    "isGenppv": oView.byId("idPPVgen").getSelectedKey(),
+                    "isPrmntsav": oView.byId("idPrmntsave").getSelectedKey(),
+                    "noMntRec": oView.byId("idTextField").getValue(),
                     "pplvCalcPrtlvl": "YES",
-                    "projectName": "NON BCC RESOURING-XUDONG",
-                    "projectOwner": "JONDON",
+                    "projectName": oView.byId("idProjectName").getValue(),
+                    "projectOwner": oView.byId("idProjectOwner").getValue(),
                     "projectStatus": "In Progress",
                     "reasonCode": "NBCR",
                     "dunsNum": "529302502",
@@ -56,7 +64,7 @@ sap.ui.define([
                     "fiscImpGc": 0.0,
                     "anImpFc": 0.0,
                     "anImpGc": 0.0,
-                    "cnfFact": 100.0,
+                    "cnfFact": oView.byId("idCnfFact").getValue(),
                     "newParentSupNum": "999988253",
                     "erpPrcUpdt": 0,
                     "ideaNum": null,
@@ -65,23 +73,23 @@ sap.ui.define([
                     "sboInitiative": "NO",
                     "capex": 0,
                     "opex": 0,
-                    "includedInBudget": null,
-                    "moduleId": null,
-                    "createdDate": "0001-12-20 00:00:00.0",
+                    "includedInBudget": oView.byId("idInBudget").getSelectedKey(),
+                    "moduleId": oView.byId("idModuleName").getSelectedKey(),
+                    "createdDate": oView.byId("idCreatedDate").getDateValue(),
                     "lastEditedUser": "test",
-                    "qualityLead": null,
-                    "projectCreator": "CHIZHE",
-                    "pcoLead": null,
-                    "commodityLead": null,
+                    "qualityLead": oView.byId("idQualitylead").getValue(),
+                    "projectCreator": oView.byId("idProjectCreator").getValue(),
+                    "pcoLead": oView.byId("idPCOlead").getValue(),
+                    "commodityLead": oView.byId("idCommoditylead").getValue(),
                     "newlandedCostPrctg": null,
                     "currentLandedCostPrctg": null,
-                    "initiativeType": "PURDIR",
+                    "initiativeType": oView.byId("idInitiativeType").getSelectedKey(),
                     "lastEditedDate": "0001-12-20 00:00:00.0",
                     "isIncludedInPurKpi": true,
-                    "initiativeTag": null,
+                    "initiativeTag": oView.byId("idInitiativeTag").getSelectedKey(),
                     "isThingworxProject": null
                 };
-                jQuery.ajax({
+                $.ajax({
                     method: "POST",
                     traditional: true,
                     data: JSON.stringify(createProjPayload),
@@ -107,12 +115,28 @@ sap.ui.define([
 
 
             },
+            validateForm: function (requiredInputs) {
+                var _self = this;
+                var valid = true;
+                requiredInputs.forEach(function (input) {
+                    var sInput = _self.getView().byId(input);
+                    if (sInput.getValue() == "" || sInput.getValue() == undefined) {
+                        valid = false;
+                        sInput.setValueState("Error");
+                    }
+                    else {
+                        sInput.setValueState("None");
+                    }
+                });
+                return valid;
+
+            },
             onComboBoxChange: function (oEvent) {
                 var sSelectedKey = oEvent.getSource().getSelectedKey();
                 var oTextField = this.getView().byId("idTextField");
 
                 // set the editable property of the Input control based on the selected key
-                if (sSelectedKey === "1") {
+                if (sSelectedKey === "yes") {
                     oTextField.setEditable(false);
                 } else {
                     oTextField.setEditable(true);
@@ -150,6 +174,9 @@ sap.ui.define([
                 odate.reasonCodeDesc[5].date = new Date(ms5).toDateString();
 
 
+            },
+            onCancelProjectSave:function(){
+                
             },
             onAddMaterial: function () {
 
