@@ -3,21 +3,25 @@ sap.ui.define([
     'sap/m/MessageToast',
     "sap/m/MessageBox",
     "sap/ui/model/json/JSONModel",
-    "sap/ui/core/Fragment"
+    "sap/ui/core/Fragment",
+    "com/svg/cwispm/utils/formatter"
+
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, MessageToast, MessageBox, JSONModel,Fragment) {
+    function (Controller, MessageToast, MessageBox, JSONModel, Fragment,formatter) {
         "use strict";
 
         return Controller.extend("com.svg.cwispm.controller.ProjectCreation", {
+            formatter: formatter,
             onInit: function () {
                 this.getOwnerComponent().getModel("oLookUpModel");
                 this.router = this.getOwnerComponent().getRouter();
                 var data = this.getOwnerComponent().getModel("oLookUpModel").getData()["reasonCodeDesc"];
                 this.getOwnerComponent().getModel("Milestone").setProperty("/reasonCodeDesc", data);
                 this.oPartSummary();
+                this.opush();
 
 
             },
@@ -148,24 +152,24 @@ sap.ui.define([
 
             },
             onAddMaterial: function () {
-        
-                    materialListData = {
-                        "Line": "",
-                        "RequestType": "",
-                        "MaterialNumber": "",
-                        "MateialDescription": "",
-                        "MaterialStatus": "DRAFT",
-                        "deleteBtnMaterialVisible": true
-                    };
+
+                materialListData = {
+                    "Line": "",
+                    "RequestType": "",
+                    "MaterialNumber": "",
+                    "MateialDescription": "",
+                    "MaterialStatus": "DRAFT",
+                    "deleteBtnMaterialVisible": true
+                };
                 this.getOwnerComponent().getModel("MaterialList").setProperty("/Materials", materialListTableData);
             },
 
-            oPartSummary: function(oEvent){
+            oPartSummary: function (oEvent) {
                 var that = this,
-                //var oTableModel = this.oTableModel;
+                    //var oTableModel = this.oTableModel;
                     oTableModel = this.getOwnerComponent().getModel("oTable"),
                     url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/getPartsDataBySupplierNumber?supplierNum=TA0017";
-              
+
 
                 jQuery.ajax({
                     url: url,
@@ -177,10 +181,56 @@ sap.ui.define([
                     error: function (error) { }
                 });
 
+            },
+
+            opush: function () {
+                var that = this;
+                var oTableModel = this.getOwnerComponent().getModel("oTable")
+                var param1 = this.getView().byId("parampsc").getValue;
+                console.log(`params ${param1}`);
+                var param2 = this.getView().byId("paramsob").getValue;
+                var result = param1*param2
+                 oTableModel.setProperty("/total", 'result');
+                 oTableModel.refresh();
+                       // // Refresh the table to reflect the changes
+                // oTable.getModel("oTable").refresh();
+
+                // url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/getPartsDataBySupplierNumber?supplierNum=TA0017";
+                // oView = this.getView(),
+                //     createProjPayload;
+                // oView.setBusy(true);
+                // oTModel = this.getOwnerComponent().getModel("oTable"),
+
+                // createProjPayload = {
+                //     "factoryCode": "string",
+                //     "partDesc": "string",
+                //     "partNum": "string",
+                //     "priceSuppCurr": 0,
+                //     "regionCode": "string",
+                //     "shareOfBussiness": 0,
+                //     "suppCurrency": "string",
+                //     "suppPriceWithTax": 0,
+                //     "supplierNum": "string",
+                //     "uom": "string"
+                // };
+                // jQuery.ajax({
+                //     method: "POST",
+                //     traditional: true,
+                //     data: JSON.stringify(createProjPayload),
+                //     contentType: "application/json; charset=UTF-8",
+                //     url: url,
+                    
+                //         success: function (data) {
+                //             oTModel.setProperty("/getPartsDataBySupplierNumber", data);
+                //             // oTableModel.refresh();
+                //         },
+                //     error: function (error) { }
+
+
+                // });
             }
 
 
 
         });
-    }
-);
+    });

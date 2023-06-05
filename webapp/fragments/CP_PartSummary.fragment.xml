@@ -29,7 +29,7 @@
                 <t:Column width="18rem">
                     <m:Label text="Current Supplier Price in Supplier Currency" />
                     <t:template>
-                         <m:Text text="{oTable>partDesc}" wrapping="false" />
+                         <m:Text id ="parampsc" text="{oTable>priceSuppCurr}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="18rem">
@@ -59,7 +59,7 @@
                 <t:Column width="9rem">
                     <m:Label text="Quantity Receipted" />
                     <t:template>
-                        <m:Text text="" wrapping="false" />
+                        <m:Text  id ="paramsob" text="{oTable>shareOfBussiness}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="20rem">
@@ -77,7 +77,7 @@
                 <t:Column width="6rem">
                     <m:Label text="Total" />
                     <t:template>
-                        <m:Text text="" wrapping="false" />
+                        <m:Text text="{oTable>multipliedValue}" wrapping="false" />
                     </t:template>
                 </t:Column>
 
