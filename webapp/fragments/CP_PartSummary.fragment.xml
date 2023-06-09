@@ -29,13 +29,13 @@
                 <t:Column width="18rem">
                     <m:Label text="Current Supplier Price in Supplier Currency" />
                     <t:template>
-                         <m:Text id ="parampsc" text="{oTable>priceSuppCurr}" wrapping="false" />
+                         <m:Text text="{oTable>priceSuppCurr}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="18rem">
                     <m:Label text="New Supplier Price in Supplier Currency" />
                     <t:template>
-                        <m:Input value=""/>
+                        <m:Input value="{oTable>newSupply}" id ="parampsc" />
                     </t:template>
                 </t:Column>
                 <t:Column width="7rem">
@@ -59,13 +59,13 @@
                 <t:Column width="9rem">
                     <m:Label text="Quantity Receipted" />
                     <t:template>
-                        <m:Text  id ="paramsob" text="{oTable>shareOfBussiness}" wrapping="false" />
+                        <m:Input value="{oTable>quantity}"  id ="paramsob"  />
                     </t:template>
                 </t:Column>
                 <t:Column width="20rem">
                     <m:Label text="Original Total Extended Standard Material Cost" />
                     <t:template>
-                        <m:Text text="" wrapping="false" />
+                        <m:Text text="{parts:['oTable>newSupply','oTable>quantity'], formatter:'.formatter.originalMaterial'}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="18rem">

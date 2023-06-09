@@ -4,7 +4,7 @@ sap.ui.define([
     "sap/m/MessageBox",
     "sap/ui/model/json/JSONModel",
     "sap/ui/core/Fragment",
-    "com/svg/cwispm/utils/formatter"
+    "com/svg/cwispm/model/formatter"
 
 ],
     /**
