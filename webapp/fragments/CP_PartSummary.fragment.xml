@@ -29,7 +29,7 @@
                 <t:Column width="18rem">
                     <m:Label text="Current Supplier Price in Supplier Currency" />
                     <t:template>
-                         <m:Text text="{oTable>priceSuppCurr}" wrapping="false" />
+                         <m:Input value="{oTable>priceSuppCurrent}" id="pricenewsupply"/>
                     </t:template>
                 </t:Column>
                 <t:Column width="18rem">
@@ -41,7 +41,7 @@
                 <t:Column width="7rem">
                     <m:Label text="Pricing Unit" />
                     <t:template>
-                        <m:Text text="{oTable>suppCurrency}" wrapping="false" />
+                        <m:Text text="{oTable>pricingUnit}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="9rem">
@@ -65,19 +65,19 @@
                 <t:Column width="20rem">
                     <m:Label text="Original Total Extended Standard Material Cost" />
                     <t:template>
-                        <m:Text text="{parts:['oTable>newSupply','oTable>quantity'], formatter:'.formatter.originalMaterial'}" wrapping="false" />
+                        <m:Text text="{parts:['oTable>priceSuppCurrent','oTable>quantity'], formatter:'.formatter.originalMat'}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="18rem">
                     <m:Label text="New Total Extended Standard Material Cost" />
                     <t:template>
-                        <m:Text text="" wrapping="false" />
+                        <m:Text text="{parts:['oTable>newSupply','oTable>quantity'], formatter:'.formatter.newTotMaterial'}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="6rem">
-                    <m:Label text="Total" />
+                    <m:Label text="Total Pofit" />
                     <t:template>
-                        <m:Text text="{oTable>multipliedValue}" wrapping="false" />
+                        <m:Text text="{parts:['oTable>newSupply','oTable>quantity','oTable>priceSuppCurrent','oTable>quantity'], formatter:'.formatter.totMat'}" wrapping="false" />
                     </t:template>
                 </t:Column>
 
