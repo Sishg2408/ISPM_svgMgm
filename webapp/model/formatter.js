@@ -10,6 +10,13 @@ com.svg.cwispm.model.formatter= {
         return (parseInt(priceO)*parseInt(quantityO))-(parseInt(priceN)*parseInt(quantityN));
     },
     profitcolor:function(priceN=0,quantityN=0,priceO=0,quantityO=0){
-        var k= (parseInt(priceO)*parseInt(quantityO))-(parseInt(priceN)*parseInt(quantityN));
+        var k = (parseInt(priceO)*parseInt(quantityO))-(parseInt(priceN)*parseInt(quantityN));
+        if (k>0){
+            return "Success";
+        }
+        else {
+            return "Error";
+        }
+
     }
 }

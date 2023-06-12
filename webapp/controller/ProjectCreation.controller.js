@@ -10,7 +10,7 @@ sap.ui.define([
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, MessageToast, MessageBox, JSONModel, Fragment,formatter) {
+    function (Controller, MessageToast, MessageBox, JSONModel, Fragment, formatter) {
         "use strict";
 
         return Controller.extend("com.svg.cwispm.controller.ProjectCreation", {
@@ -27,13 +27,13 @@ sap.ui.define([
             },
             onCreateNewProj: function (oEvent) {
                 //validation
-                var requiredInputs = ['idProjectOwner', 'idProjectName', 'idCnfFact','idPPVgen','idInBudget','idProjectCreator', 'idQualitylead', 'idPCOlead', 'idCommoditylead', 'idEnglead'];
+                var requiredInputs = ['idProjectOwner', 'idProjectName', 'idCnfFact', 'idPPVgen', 'idInBudget', 'idProjectCreator', 'idQualitylead', 'idPCOlead', 'idCommoditylead', 'idEnglead'];
                 var passedValidation = this.validateForm(requiredInputs);
                 if (passedValidation === false) {
                     MessageBox.error("Please fill all fields")
                     return false;
                 }
-                var url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/saveProjectHeader",
+                var url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/saveAllProjectDetails",
                     that = this,
                     oView = this.getView(),
                     // oProjectHeaderModel = this.getOwnerComponent().getModel("ProjectHeader"),
@@ -87,7 +87,9 @@ sap.ui.define([
                     "lastEditedDate": "0001-12-20 00:00:00.0",
                     "isIncludedInPurKpi": true,
                     "initiativeTag": oView.byId("idInitiativeTag").getSelectedKey(),
-                    "isThingworxProject": null
+                    "isThingworxProject": null,
+
+
                 };
                 $.ajax({
                     method: "POST",
@@ -175,8 +177,8 @@ sap.ui.define([
 
 
             },
-            onCancelProjectSave:function(){
-                
+            onCancelProjectSave: function () {
+
             },
             onAddMaterial: function () {
 
@@ -216,10 +218,10 @@ sap.ui.define([
                 var param1 = this.getView().byId("parampsc").getValue;
                 console.log(`params ${param1}`);
                 var param2 = this.getView().byId("paramsob").getValue;
-                var result = param1*param2
-                 oTableModel.setProperty("/total", 'result');
-                 oTableModel.refresh();
-                       // // Refresh the table to reflect the changes
+                var result = param1 * param2
+                oTableModel.setProperty("/total", 'result');
+                oTableModel.refresh();
+                // // Refresh the table to reflect the changes
                 // oTable.getModel("oTable").refresh();
 
                 // url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/getPartsDataBySupplierNumber?supplierNum=TA0017";
@@ -246,7 +248,7 @@ sap.ui.define([
                 //     data: JSON.stringify(createProjPayload),
                 //     contentType: "application/json; charset=UTF-8",
                 //     url: url,
-                    
+
                 //         success: function (data) {
                 //             oTModel.setProperty("/getPartsDataBySupplierNumber", data);
                 //             // oTableModel.refresh();
