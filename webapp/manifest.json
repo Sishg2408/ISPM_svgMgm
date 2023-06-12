@@ -74,6 +74,12 @@
                     "defaultBindingMode": "TwoWay"
                 }
             },
+            "PartSummary": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {
+                    "defaultBindingMode": "TwoWay"
+                }
+            },
             "oTable": {
                 "type": "sap.ui.model.json.JSONModel",
                 "settings": {

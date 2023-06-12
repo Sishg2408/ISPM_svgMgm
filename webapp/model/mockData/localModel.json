@@ -108,11 +108,11 @@
     "reasonCode": [
         {
             "option": "Incumbent Negotiation",
-            "key": "1"
+            "key": "Incumbent Negotiation"
         },
         {
             "option": "Other",
-            "key": 2
+            "key": "Other"
         }
     ],
     "reasonCodeDesc": [
@@ -144,29 +144,40 @@
     ],
     "supplierName": [
         {
-            "data": "Aarrowcast,Inc."
+            "data": "Aarrowcast,Inc.",
+            "key": "Aarrowcast,Inc."
             
         },
         {
-            "data": "Adams Thermal Systems Inc"
-            
+            "data": "Adams Thermal Systems Inc",
+            "key": "Adams Thermal Systems Inc"
         },
         {
-            "data": "TriMark Corp"
-            
+            "data": "TriMark Corp",
+            "key": "TriMark Corp"
         },
         {
-            "data": "Centro,INC"
-            
+            "data": "Centro,INC",
+            "key": "Centro,INC"
         },
         {
-            "data": "Cope Plastics"
-            
+            "data": "Cope Plastics",
+            "key": "Cope Plastics"
         },
         {
-            "data": "MICO Incoporated"
-            
+            "data": "MICO Incoporated",
+            "key": "MICO Incoporated"
         }
 
+    ],
+    "partNumber": [
+        {
+            "option": "2801403M8-10",
+            "key": "2801403M8-10"
+        },
+        {
+            "option": "Other",
+            "key": "Other"
+        }
     ]
 }

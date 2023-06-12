@@ -14,7 +14,7 @@
                         <m:Text text="" wrapping="false" />
                     </t:template>
                 </t:Column> -->
-                <t:Column width="6rem">
+                <t:Column width="9rem">
                     <m:Label text="Part Number" />
                     <t:template>
                         <m:Text text="{oTable>partNum}" wrapping="false" />
@@ -29,19 +29,19 @@
                 <t:Column width="18rem">
                     <m:Label text="Current Supplier Price in Supplier Currency" />
                     <t:template>
-                         <m:Text text="{oTable>partDesc}" wrapping="false" />
+                        <m:Text text="{oTable>priceSuppCurr}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="18rem">
                     <m:Label text="New Supplier Price in Supplier Currency" />
                     <t:template>
-                        <m:Input value=""/>
+                        <m:Input id="idPriceSuppNew" value="{oTable>newSupply}" />
                     </t:template>
                 </t:Column>
                 <t:Column width="7rem">
                     <m:Label text="Pricing Unit" />
                     <t:template>
-                        <m:Text text="{oTable>suppCurrency}" wrapping="false" />
+                        <m:Text text="" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="9rem">
@@ -59,23 +59,23 @@
                 <t:Column width="9rem">
                     <m:Label text="Quantity Receipted" />
                     <t:template>
-                        <m:Text text="" wrapping="false" />
+                        <m:Input id="idQuantityReceipt" value="{oTable>quantity}" />
                     </t:template>
                 </t:Column>
-                <t:Column width="20rem">
+                <t:Column width="18rem">
                     <m:Label text="Original Total Extended Standard Material Cost" />
                     <t:template>
-                        <m:Text text="" wrapping="false" />
+                        <m:Text id="idOriginalCost" text="{parts:['oTable>priceSuppCurr','oTable>quantity'], formatter:'.formatter.originalMaterial'}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="18rem">
                     <m:Label text="New Total Extended Standard Material Cost" />
                     <t:template>
-                        <m:Text text="" wrapping="false" />
+                        <m:Text text="{parts:['oTable>newSupply','oTable>quantity'], formatter:'.formatter.newMaterial'}" wrapping="false" />
                     </t:template>
                 </t:Column>
-                <t:Column width="6rem">
-                    <m:Label text="Total" />
+                <t:Column width="9rem">
+                    <m:Label text="Total Savings" />
                     <t:template>
                         <m:Text text="" wrapping="false" />
                     </t:template>
@@ -100,8 +100,6 @@
             <m:Button text="{i18n>ADD}" icon="sap-icon://add" press="onAddMaterial" class="sigBtnDefault sapUiSmallMarginEnd" type="Default"/>
         </m:HBox>
     </m:VBox>
-
-
 
 
 </core:FragmentDefinition>

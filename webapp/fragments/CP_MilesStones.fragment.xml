@@ -5,7 +5,7 @@
 
         <VBox>
             <Label text="Reason Code" class="sigLabel"/>
-            <ComboBox id="idDropdown" width="100%" change="onChange" value="Incumbent Negotiation"  showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/reasonCode}" >
+            <ComboBox id="idReasonCode" width="100%" change="onChange" showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/reasonCode}" >
                 <core:ListItem key="{oLookUpModel>key}" text="{oLookUpModel>option}" additionalText=""/>
             </ComboBox>
         </VBox>

@@ -3,87 +3,134 @@ sap.ui.define([
     'sap/m/MessageToast',
     "sap/m/MessageBox",
     "sap/ui/model/json/JSONModel",
-    "sap/ui/core/Fragment"
+    "sap/ui/core/Fragment",
+    "com/svg/cwispm/model/formatter"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, MessageToast, MessageBox, JSONModel,Fragment) {
+    function (Controller, MessageToast, MessageBox, JSONModel, Fragment,formatter) {
         "use strict";
 
         return Controller.extend("com.svg.cwispm.controller.ProjectCreation", {
+            formatter: formatter,
             onInit: function () {
                 this.getOwnerComponent().getModel("oLookUpModel");
                 this.router = this.getOwnerComponent().getRouter();
                 var data = this.getOwnerComponent().getModel("oLookUpModel").getData()["reasonCodeDesc"];
                 this.getOwnerComponent().getModel("Milestone").setProperty("/reasonCodeDesc", data);
+                this.getOwnerComponent().getModel("PartSummary");
                 this.oPartSummary();
 
 
             },
             onCreateNewProj: function (oEvent) {
                 //validation
-                var requiredInputs = ['idProjectOwner', 'idProjectName', 'idCnfFact','idPPVgen','idInBudget','idProjectCreator', 'idQualitylead', 'idPCOlead', 'idCommoditylead', 'idEnglead'];
-                var passedValidation = this.validateForm(requiredInputs);
-                if (passedValidation === false) {
-                    MessageBox.error("Please fill all fields")
-                    return false;
-                }
-                var url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/saveProjectHeader",
+                // var requiredInputs = ['idProjectOwner', 'idProjectName', 'idCnfFact', 'idPPVgen', 'idInBudget', 'idProjectCreator', 'idQualitylead', 'idPCOlead', 'idCommoditylead', 'idEnglead'];
+                // var passedValidation = this.validateForm(requiredInputs);
+                // if (passedValidation === false) {
+                //     MessageBox.error("Please fill all fields")
+                //     return false;
+                // }
+                var url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/saveAllProjectDetails",
                     that = this,
                     oView = this.getView(),
-                    // oProjectHeaderModel = this.getOwnerComponent().getModel("ProjectHeader"),
-                    // oProjHeadData = oProjectHeaderModel.getData(),
+                    // oPartSummaryModel = oView.getModel("PartSummary"),
+                    // sPropertyValue = oPartSummaryModel.getProperty("/property1"),
                     // oCreateProjectIconTab = oView.byId("CreateProjectIconTab"),
                     // oAppModel = this.oComponent.getModel("oAppModel"),
                     // inputValidateArray,
                     createProjPayload;
                 oView.setBusy(true);
+                debugger
+                // edited by 
+                var priceSuppNew = oView.byId("idPriceSuppNew").getValue();
+                var quantReceived = oView.byId("idQuantityReceipt").getValue();
+                var origExtendedCost = priceSuppNew * quantReceived;
+                this.getView().getModel("PartSummary").setProperty("/origExtendedCost", origExtendedCost);
+                // edited by
+
 
                 createProjPayload = {
-                    "acreIdea": "Yes",
-                    "acreSupplierNum": null,
-                    "countryCode": null,
-                    "dualSrcng": oView.byId("idDualSrcng").getSelectedKey(),
-                    "engLead": oView.byId("idEnglead").getValue(),
-                    "isBcc": "NO",
-                    "isGenppv": oView.byId("idPPVgen").getSelectedKey(),
-                    "isPrmntsav": oView.byId("idPrmntsave").getSelectedKey(),
-                    "noMntRec": oView.byId("idTextField").getValue(),
-                    "pplvCalcPrtlvl": "YES",
-                    "projectName": oView.byId("idProjectName").getValue(),
-                    "projectOwner": oView.byId("idProjectOwner").getValue(),
-                    "projectStatus": "In Progress",
-                    "reasonCode": "NBCR",
-                    "dunsNum": "529302502",
-                    "fiscImpFc": 0.0,
-                    "fiscImpGc": 0.0,
-                    "anImpFc": 0.0,
-                    "anImpGc": 0.0,
-                    "cnfFact": oView.byId("idCnfFact").getValue(),
-                    "newParentSupNum": "999988253",
-                    "erpPrcUpdt": 0,
-                    "ideaNum": null,
-                    "comments": null,
-                    "changeInLandedCostPrctg": null,
-                    "sboInitiative": "NO",
-                    "capex": 0,
-                    "opex": 0,
-                    "includedInBudget": oView.byId("idInBudget").getSelectedKey(),
-                    "moduleId": oView.byId("idModuleName").getSelectedKey(),
-                    "createdDate": oView.byId("idCreatedDate").getDateValue(),
-                    "lastEditedUser": "test",
-                    "qualityLead": oView.byId("idQualitylead").getValue(),
-                    "projectCreator": oView.byId("idProjectCreator").getValue(),
-                    "pcoLead": oView.byId("idPCOlead").getValue(),
-                    "commodityLead": oView.byId("idCommoditylead").getValue(),
-                    "newlandedCostPrctg": null,
-                    "currentLandedCostPrctg": null,
-                    "initiativeType": oView.byId("idInitiativeType").getSelectedKey(),
-                    "lastEditedDate": "0001-12-20 00:00:00.0",
-                    "isIncludedInPurKpi": true,
-                    "initiativeTag": oView.byId("idInitiativeTag").getSelectedKey(),
-                    "isThingworxProject": null
+                    "projectHdrDto": {
+                        "acreIdea": "Yes",
+                        "acreSupplierNum": null,
+                        "countryCode": null,
+                        "dualSrcng": oView.byId("idDualSrcng").getSelectedKey(),
+                        "engLead": oView.byId("idEnglead").getValue(),
+                        "isBcc": "NO",
+                        "isGenppv": oView.byId("idPPVgen").getSelectedKey(),
+                        "isPrmntsav": oView.byId("idPrmntsave").getSelectedKey(),
+                        "noMntRec": oView.byId("idTextField").getValue(),
+                        "pplvCalcPrtlvl": "YES",
+                        "projectName": oView.byId("idProjectName").getValue(),
+                        "projectOwner": oView.byId("idProjectOwner").getValue(),
+                        "projectStatus": "In Progress",
+                        "reasonCode": "NBCR",
+                        "dunsNum": "529302502",
+                        "fiscImpFc": 0.0,
+                        "fiscImpGc": 0.0,
+                        "anImpFc": 0.0,
+                        "anImpGc": 0.0,
+                        "cnfFact": oView.byId("idCnfFact").getValue(),
+                        "newParentSupNum": "999988253",
+                        "erpPrcUpdt": 0,
+                        "ideaNum": null,
+                        "comments": null,
+                        "changeInLandedCostPrctg": null,
+                        "sboInitiative": "NO",
+                        "capex": 0,
+                        "opex": 0,
+                        "includedInBudget": oView.byId("idInBudget").getSelectedKey(),
+                        "moduleId": oView.byId("idModuleName").getSelectedKey(),
+                        "createdDate": oView.byId("idCreatedDate").getDateValue(),
+                        "lastEditedUser": "test",
+                        "qualityLead": oView.byId("idQualitylead").getValue(),
+                        "projectCreator": oView.byId("idProjectCreator").getValue(),
+                        "pcoLead": oView.byId("idPCOlead").getValue(),
+                        "commodityLead": oView.byId("idCommoditylead").getValue(),
+                        "newlandedCostPrctg": null,
+                        "currentLandedCostPrctg": null,
+                        "initiativeType": oView.byId("idInitiativeType").getSelectedKey(),
+                        "lastEditedDate": "0001-12-20 00:00:00.0",
+                        "isIncludedInPurKpi": true,
+                        "initiativeTag": oView.byId("idInitiativeTag").getSelectedKey(),
+                        "isThingworxProject": null
+                    },
+                    "projectItmDtoList": [
+                        {
+                            "partNum": "2801403M8-198",
+                            "factoryCode": "CAN",
+                            "origSupplierNum": "",
+                            "partDescription": "ADAPTADOR PESOS RODA TRAS",
+                            "currSupplierPriceSupplierCurrency": 37.6,
+                            "currencyCode": "USD",
+                            "supCurrency": "USD",
+                            "newSupplierPriceSupplierCurrency": oView.byId("idPriceSuppNew").getValue(),
+                            "uomCode": "EA",
+                            "pricingUnit": 1,
+                            "quantityRecieved": oView.byId("idQuantityReceipt").getValue(),
+                            "total": 22.0
+                        },
+
+                    ],
+                    "projectPartMilestoneDtoList": [
+                        {
+                            "actualCompDate": "0001-12-20 00:00:00.0",
+                            "comments": "string",
+                            "compStatus": 0,
+                            "factoryCode": "GEC2",
+                            "identifier": "string",
+                            "milestoneCode": oView.byId("idReasonCode").getSelectedKey(),
+                            "milestoneDayRule": 0,
+                            "milestoneSeq": 0,
+                            "optMilestone": 0,
+                            "partNum": "string",
+                            "plannedCompDate": "0001-12-20 00:00:00.0",
+                            "milestoneDesc": "TEST"
+                        },
+                    ]
+
                 };
                 $.ajax({
                     method: "POST",
@@ -111,22 +158,37 @@ sap.ui.define([
 
 
             },
-            validateForm: function (requiredInputs) {
-                var _self = this;
-                var valid = true;
-                requiredInputs.forEach(function (input) {
-                    var sInput = _self.getView().byId(input);
-                    if (sInput.getValue() == "" || sInput.getValue() == undefined) {
-                        valid = false;
-                        sInput.setValueState("Error");
-                    }
-                    else {
-                        sInput.setValueState("None");
-                    }
-                });
-                return valid;
+            // validateForm: function (requiredInputs) {
+            //     var _self = this;
+            //     var valid = true;
+            //     requiredInputs.forEach(function (input) {
+            //         var sInput = _self.getView().byId(input);
+            //         if (sInput.getValue() == "" || sInput.getValue() == undefined) {
+            //             valid = false;
+            //             sInput.setValueState("Error");
+            //         }
+            //         else {
+            //             sInput.setValueState("None");
+            //         }
+            //     });
+            //     return valid;
 
-            },
+            // },
+
+            // onInputChange: function (oEvent) {
+
+            //     var priceSupp = this.getView().byId("idPriceSuppNew");
+            //     var priceSuppNew = oEvent.getParameters(priceSupp).value;
+            //     var quantRec = this.getView().byId("idQuantityReceipt");
+            //     // var quantReceived = quantRec.getValue();
+                
+            //     // var quantReceived = oEvent.getParameters(quantRec).value;
+            //     var quantReceived = oEvent.getParameters(quantRec).value;
+            //     var origExtendedCost = priceSuppNew*quantReceived;
+            //     this.getView().getModel("PartSummary").setProperty("/origExtendedCost", origExtendedCost);
+
+            // },
+
             onComboBoxChange: function (oEvent) {
                 var sSelectedKey = oEvent.getSource().getSelectedKey();
                 var oTextField = this.getView().byId("idTextField");
@@ -171,8 +233,8 @@ sap.ui.define([
 
 
             },
-            onCancelProjectSave:function(){
-                
+            onCancelProject: function () {
+
             },
             onAddMaterial: function () {
 
@@ -187,12 +249,12 @@ sap.ui.define([
                 this.getOwnerComponent().getModel("MaterialList").setProperty("/Materials", materialListTableData);
             },
 
-            oPartSummary: function(oEvent){
+            oPartSummary: function (oEvent) {
                 var that = this,
-                //var oTableModel = this.oTableModel;
+                    //var oTableModel = this.oTableModel;
                     oTableModel = this.getOwnerComponent().getModel("oTable"),
                     url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/getPartsDataBySupplierNumber?supplierNum=TA0017";
-              
+
 
                 jQuery.ajax({
                     url: url,

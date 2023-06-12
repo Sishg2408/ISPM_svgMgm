@@ -8,13 +8,13 @@
 
                 <IconTabBar id="CreateProjectIconTab" class="sigIconTabBar" select="onCreateProjTabSelect">
                     <items>
-                        <IconTabFilter text="1. Project Header" key="ProjectHeader">
+                        <IconTabFilter text="Project Header" key="ProjectHeader">
                             <core:Fragment fragmentName="com.svg.cwispm.fragments.CP_ProjectHeader" type="XML"/>
                         </IconTabFilter>
-                        <IconTabFilter text="2. Milestones" key="MatList">
+                        <IconTabFilter text="Milestones" key="MatList">
                             <core:Fragment fragmentName="com.svg.cwispm.fragments.CP_MilesStones" type="XML"/>
                         </IconTabFilter>
-                        <IconTabFilter text="3. Parts Summary" key="MatDetail">
+                        <IconTabFilter text="Parts Summary" key="MatDetail">
                             <core:Fragment fragmentName="com.svg.cwispm.fragments.CP_PartSummary" type="XML"/>
                         </IconTabFilter>
                     </items>

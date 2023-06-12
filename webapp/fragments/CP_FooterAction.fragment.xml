@@ -3,8 +3,8 @@
     xmlns:l="sap.ui.layout">
     <Toolbar>
         <ToolbarSpacer/>
-        <Button text="Cancel" type="Default" class="sigBtnDefault" press="onCancelProjectSave"/>
-        <Button text="Save" type="Emphasized" class="sigBtnEmphasized"  press="onCreateNewProj" />
+        <Button text="Cancel" type="Default" class="sigBtnDefault" press="onCancelProject"/>
+        <Button text="Next" type="Default" class="sigBtnDefault" press="onNextProject"/>
         <!-- <Button text="{i18n>SAVE_MAT_LIST}" type="Emphasized" class="sigBtnEmphasized" visible="{parts:['oAppModel>/CreateProjSelectedTab','Visibility>/hasTaskId'], formatter:'com.materialManagement.materialmanagement.model.formatter.getVisibleforMatList'}" press="onSaveMaterialList"/>
         <Button text="{i18n>SAVE_MAT_DETAILS}" type="Emphasized" class="sigBtnEmphasized" visible="{parts:['oAppModel>/CreateProjSelectedTab','Visibility>/hasTaskId'], formatter:'com.materialManagement.materialmanagement.model.formatter.getVisibleforMatDetails'}" press="onSaveMaterialDetails"/>
         <Button text="{i18n>START_PROCESS}" press="onStartProject" type="Emphasized" class="sigBtnEmphasized" visible="{parts:['oAppModel>/CreateProjSelectedTab','Visibility>/hasTaskId'], formatter:'com.materialManagement.materialmanagement.model.formatter.getVisibleforStartProcess'}"/>
