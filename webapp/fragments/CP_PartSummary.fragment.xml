@@ -29,7 +29,7 @@
                 <t:Column width="18rem">
                     <m:Label text="Current Supplier Price in Supplier Currency" />
                     <t:template>
-                         <m:Input value="{oTable>priceSuppCurrent}" id="pricenewsupply"/>
+                         <m:Input value="{oTable>priceSuppCurr}" id="pricenewsupply"/>
                     </t:template>
                 </t:Column>
                 <t:Column width="18rem">
@@ -65,7 +65,7 @@
                 <t:Column width="20rem">
                     <m:Label text="Original Total Extended Standard Material Cost" />
                     <t:template>
-                        <m:Text text="{parts:['oTable>priceSuppCurrent','oTable>quantity'], formatter:'.formatter.originalMat'}" wrapping="false" />
+                        <m:Text text="{parts:['oTable>priceSuppCurr','oTable>quantity'], formatter:'.formatter.originalMat'}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="18rem">
@@ -77,7 +77,7 @@
                 <t:Column width="6rem">
                     <m:Label text="Total Pofit" />
                     <t:template>
-                        <m:Text text="{parts:['oTable>newSupply','oTable>quantity','oTable>priceSuppCurrent','oTable>quantity'], formatter:'.formatter.totMat'}" wrapping="false" />
+                        <m:Text text="{parts:['oTable>newSupply','oTable>quantity','oTable>priceSuppCurr','oTable>quantity'], formatter:'.formatter.totMat' }" wrapping="false" />
                     </t:template>
                 </t:Column>
 
