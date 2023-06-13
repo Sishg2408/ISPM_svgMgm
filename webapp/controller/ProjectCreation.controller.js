@@ -247,7 +247,25 @@ sap.ui.define([
                     error: function (error) { }
                 });
 
-            }
+            },
+            onNEXT: function() {
+                var oIconTabBar = this.byId("CreateProjectIconTab"); 
+                var aItems = oIconTabBar.getItems(); 
+                var selectedKey = oIconTabBar.getSelectedKey(); 
+                var selectedIndex = aItems.findIndex(function(item) {
+                  return item.getKey() === selectedKey;
+                });
+              
+                if (selectedIndex !== -1 && selectedIndex < aItems.length - 1) {
+                  var nextItem = aItems[selectedIndex + 1]; 
+                  oIconTabBar.setSelectedKey(nextItem.getKey()); 
+                }
+                if (selectedIndex == aItems.length -2){
+                    var oButtonmodel = this.getOwnerComponent().getModel("oButtonmodel");
+                    this.oButtonmodel = oButtonmodel;
+                    oButtonmodel.setProperty("/nextButtonVisible", false);
+                }
+              },
 
 
 

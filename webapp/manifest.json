@@ -68,6 +68,12 @@
                 "type": "sap.ui.model.json.JSONModel",
                 "uri": "model/mockData/localModel.json"
             },
+            "oButtonmodel": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {
+                    "defaultBindingMode": "TwoWay"
+                }
+            },
             "Milestone": {
                 "type": "sap.ui.model.json.JSONModel",
                 "settings": {
