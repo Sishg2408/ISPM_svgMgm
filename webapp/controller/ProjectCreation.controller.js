@@ -26,21 +26,12 @@ sap.ui.define([
             },
             onCreateNewProj: function (oEvent) {
                 //validation
-<<<<<<< HEAD
                 // var requiredInputs = ['idProjectOwner', 'idProjectName', 'idCnfFact', 'idPPVgen', 'idInBudget', 'idProjectCreator', 'idQualitylead', 'idPCOlead', 'idCommoditylead', 'idEnglead'];
                 // var passedValidation = this.validateForm(requiredInputs);
                 // if (passedValidation === false) {
                 //     MessageBox.error("Please fill all fields")
                 //     return false;
                 // }
-=======
-                var requiredInputs = ['idProjectOwner', 'idProjectName', 'idCnfFact', 'idPPVgen', 'idInBudget', 'idProjectCreator', 'idQualitylead', 'idPCOlead', 'idCommoditylead', 'idEnglead'];
-                var passedValidation = this.validateForm(requiredInputs);
-                if (passedValidation === false) {
-                    MessageBox.error("Please fill all fields")
-                    return false;
-                }
->>>>>>> b1f6f534486a37defb39178801431a74f3719495
                 var url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/saveAllProjectDetails",
                     that = this,
                     oView = this.getView(),
@@ -94,11 +85,7 @@ sap.ui.define([
                         "newlandedCostPrctg": null,
                         "currentLandedCostPrctg": null,
                         "initiativeType": oView.byId("idInitiativeType").getSelectedKey(),
-<<<<<<< HEAD
                         "lastEditedDate": "2019-06-04T18:30:00.000Z",
-=======
-                        "lastEditedDate": "0001-12-20 00:00:00.0",
->>>>>>> b1f6f534486a37defb39178801431a74f3719495
                         "isIncludedInPurKpi": true,
                         "initiativeTag": oView.byId("idInitiativeTag").getSelectedKey(),
                         "isThingworxProject": null
@@ -112,54 +99,31 @@ sap.ui.define([
                             "currSupplierPriceSupplierCurrency": 37.6,
                             "currencyCode": "USD",
                             "supCurrency": "USD",
-<<<<<<< HEAD
                             "newSupplierPriceSupplierCurrency": 112.5,
                             "uomCode": "EA",
                             "pricingUnit": 1,
                             "quantityRecieved": 10,
-=======
-                            "newSupplierPriceSupplierCurrency": oView.byId("idPriceSuppNew").getValue(),
-                            "uomCode": "EA",
-                            "pricingUnit": 1,
-                            "quantityRecieved": oView.byId("idQuantityReceipt").getValue(),
->>>>>>> b1f6f534486a37defb39178801431a74f3719495
                             "total": 22.0
                         }
 
                     ],
                     "projectPartMilestoneDtoList": [
                         {
-<<<<<<< HEAD
                             "actualCompDate": "2019-06-04T18:30:00.000Z",
-=======
-                            "actualCompDate": "0001-12-20 00:00:00.0",
->>>>>>> b1f6f534486a37defb39178801431a74f3719495
                             "comments": "string",
                             "compStatus": 0,
                             "factoryCode": "GEC2",
                             "identifier": "string",
-<<<<<<< HEAD
                             "milestoneCode": 2,
-=======
-                            "milestoneCode": oView.byId("idReasonCode").getSelectedKey(),
->>>>>>> b1f6f534486a37defb39178801431a74f3719495
                             "milestoneDayRule": 0,
                             "milestoneSeq": 0,
                             "optMilestone": 0,
                             "partNum": "test",
-<<<<<<< HEAD
                             "plannedCompDate": "2019-06-04T18:30:00.000Z",
-=======
-                            "plannedCompDate": "0001-12-20 00:00:00.0",
->>>>>>> b1f6f534486a37defb39178801431a74f3719495
                             "milestoneDesc": "TEST"
                         }
                     ]
 
-<<<<<<< HEAD
-=======
-
->>>>>>> b1f6f534486a37defb39178801431a74f3719495
                 };
                 $.ajax({
                     method: "POST",
@@ -204,19 +168,7 @@ sap.ui.define([
 
             // },
 
-            // onInputChange: function (oEvent) {
-
-            //     var priceSupp = this.getView().byId("idPriceSuppNew");
-            //     var priceSuppNew = oEvent.getParameters(priceSupp).value;
-            //     var quantRec = this.getView().byId("idQuantityReceipt");
-            //     // var quantReceived = quantRec.getValue();
-                
-            //     // var quantReceived = oEvent.getParameters(quantRec).value;
-            //     var quantReceived = oEvent.getParameters(quantRec).value;
-            //     var origExtendedCost = priceSuppNew*quantReceived;
-            //     this.getView().getModel("PartSummary").setProperty("/origExtendedCost", origExtendedCost);
-
-            // },
+            
 
             onComboBoxChange: function (oEvent) {
                 var sSelectedKey = oEvent.getSource().getSelectedKey();
@@ -262,11 +214,7 @@ sap.ui.define([
 
 
             },
-<<<<<<< HEAD
             onCancelProject: function () {
-=======
-            onCancelProjectSave: function () {
->>>>>>> b1f6f534486a37defb39178801431a74f3719495
 
             },
             onAddMaterial: function () {
@@ -299,56 +247,6 @@ sap.ui.define([
                     error: function (error) { }
                 });
 
-<<<<<<< HEAD
-=======
-            },
-
-            opush: function () {
-                var that = this;
-                var oTableModel = this.getOwnerComponent().getModel("oTable")
-                var param1 = this.getView().byId("parampsc").getValue;
-                console.log(`params ${param1}`);
-                var param2 = this.getView().byId("paramsob").getValue;
-                var result = param1 * param2
-                oTableModel.setProperty("/total", 'result');
-                oTableModel.refresh();
-                // // Refresh the table to reflect the changes
-                // oTable.getModel("oTable").refresh();
-
-                // url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/getPartsDataBySupplierNumber?supplierNum=TA0017";
-                // oView = this.getView(),
-                //     createProjPayload;
-                // oView.setBusy(true);
-                // oTModel = this.getOwnerComponent().getModel("oTable"),
-
-                // createProjPayload = {
-                //     "factoryCode": "string",
-                //     "partDesc": "string",
-                //     "partNum": "string",
-                //     "priceSuppCurr": 0,
-                //     "regionCode": "string",
-                //     "shareOfBussiness": 0,
-                //     "suppCurrency": "string",
-                //     "suppPriceWithTax": 0,
-                //     "supplierNum": "string",
-                //     "uom": "string"
-                // };
-                // jQuery.ajax({
-                //     method: "POST",
-                //     traditional: true,
-                //     data: JSON.stringify(createProjPayload),
-                //     contentType: "application/json; charset=UTF-8",
-                //     url: url,
-
-                //         success: function (data) {
-                //             oTModel.setProperty("/getPartsDataBySupplierNumber", data);
-                //             // oTableModel.refresh();
-                //         },
-                //     error: function (error) { }
-
-
-                // });
->>>>>>> b1f6f534486a37defb39178801431a74f3719495
             }
 
 
