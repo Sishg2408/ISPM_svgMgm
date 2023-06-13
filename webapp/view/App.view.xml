@@ -4,7 +4,7 @@
     xmlns:f="sap.f"
     xmlns:core="sap.ui.core"
     xmlns:tnt="sap.tnt">
-    <tnt:ToolPage class="siToolPage">
+    <!-- <tnt:ToolPage class="siToolPage">
         <tnt:sideContent >
             <tnt:SideNavigation id="sideNavigation" selectedKey="Welcome" itemSelect=".onItemSelect" class="sigSideNavigation">
                 <tnt:NavigationList class="sigSideNavList ">
@@ -19,6 +19,8 @@
             <NavContainer id="side_Navigation_Content">
             </NavContainer>
         </tnt:mainContents>
-    </tnt:ToolPage>
+    </tnt:ToolPage> -->
+    <App id="app">
+    </App>
 </mvc:View>   
    

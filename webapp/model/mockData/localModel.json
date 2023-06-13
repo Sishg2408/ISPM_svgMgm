@@ -42,7 +42,7 @@
     "moduleName": [
         {
             "name": "Attachment Interface and Wheels",
-            "key": "Attachment Interface and Wheels"
+            "key": "Attachment"
         },
         {
             "name": "Cabin",
@@ -50,7 +50,7 @@
         },
         {
             "name": "Crop Care Specific",
-            "key": "Crop Care Specific"
+            "key": "Crop "
         },
         {
             "name": "Cabin",
@@ -58,11 +58,11 @@
         },
         {
             "name": "Drive Train",
-            "key": "Drive Train"
+            "key": "Drive "
         },
         {
             "name": "Electrics and Electronics",
-            "key": "Electrics and Electronics"
+            "key": "Electrics "
         }
     ],
     "intiativeTags": [

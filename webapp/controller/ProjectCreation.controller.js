@@ -42,13 +42,6 @@ sap.ui.define([
                     // inputValidateArray,
                     createProjPayload;
                 oView.setBusy(true);
-                debugger
-                // edited by 
-                var priceSuppNew = oView.byId("idPriceSuppNew").getValue();
-                var quantReceived = oView.byId("idQuantityReceipt").getValue();
-                var origExtendedCost = priceSuppNew * quantReceived;
-                this.getView().getModel("PartSummary").setProperty("/origExtendedCost", origExtendedCost);
-                // edited by
 
 
                 createProjPayload = {
@@ -92,7 +85,7 @@ sap.ui.define([
                         "newlandedCostPrctg": null,
                         "currentLandedCostPrctg": null,
                         "initiativeType": oView.byId("idInitiativeType").getSelectedKey(),
-                        "lastEditedDate": "0001-12-20 00:00:00.0",
+                        "lastEditedDate": "2019-06-04T18:30:00.000Z",
                         "isIncludedInPurKpi": true,
                         "initiativeTag": oView.byId("idInitiativeTag").getSelectedKey(),
                         "isThingworxProject": null
@@ -101,34 +94,34 @@ sap.ui.define([
                         {
                             "partNum": "2801403M8-198",
                             "factoryCode": "CAN",
-                            "origSupplierNum": "",
+                            "origSupplierNum": "TEST",
                             "partDescription": "ADAPTADOR PESOS RODA TRAS",
                             "currSupplierPriceSupplierCurrency": 37.6,
                             "currencyCode": "USD",
                             "supCurrency": "USD",
-                            "newSupplierPriceSupplierCurrency": oView.byId("idPriceSuppNew").getValue(),
+                            "newSupplierPriceSupplierCurrency": 112.5,
                             "uomCode": "EA",
                             "pricingUnit": 1,
-                            "quantityRecieved": oView.byId("idQuantityReceipt").getValue(),
+                            "quantityRecieved": 10,
                             "total": 22.0
-                        },
+                        }
 
                     ],
                     "projectPartMilestoneDtoList": [
                         {
-                            "actualCompDate": "0001-12-20 00:00:00.0",
+                            "actualCompDate": "2019-06-04T18:30:00.000Z",
                             "comments": "string",
                             "compStatus": 0,
                             "factoryCode": "GEC2",
                             "identifier": "string",
-                            "milestoneCode": oView.byId("idReasonCode").getSelectedKey(),
+                            "milestoneCode": 2,
                             "milestoneDayRule": 0,
                             "milestoneSeq": 0,
                             "optMilestone": 0,
-                            "partNum": "string",
-                            "plannedCompDate": "0001-12-20 00:00:00.0",
+                            "partNum": "test",
+                            "plannedCompDate": "2019-06-04T18:30:00.000Z",
                             "milestoneDesc": "TEST"
-                        },
+                        }
                     ]
 
                 };

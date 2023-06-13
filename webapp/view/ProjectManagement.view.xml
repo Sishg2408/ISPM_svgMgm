@@ -15,78 +15,43 @@
 
                     <t:columns>
 
-                        <t:Column width="7rem">
+                        <t:Column width="9rem">
                             <m:Label text="Project Number" />
                             <t:template>
-                                <m:Text text="{oTable>projectNumber}" wrapping="false" />
+                                <m:Text text="{oTable>projectNum}" wrapping="false" />
                             </t:template>
                         </t:Column>
-                        <t:Column width="6rem">
-                            <m:Label text="Part Number" />
+                        <t:Column width="16rem">
+                            <m:Label text="Project Name" />
                             <t:template>
-                                <m:Text text="{oTable>partNum}" wrapping="false" />
+                                <m:Text text="{oTable>projectName}" wrapping="false" />
                             </t:template>
                         </t:Column>
                         <t:Column width="7.5rem">
-                            <m:Label text="Part Description" />
+                            <m:Label text="Project Owner" />
                             <t:template>
-                                <m:Text text="{oTable>partDescription}" wrapping="false" />
+                                <m:Text text="{oTable>projectOwner}" wrapping="false" />
                             </t:template>
                         </t:Column>
-                        <t:Column width="18rem">
-                            <m:Label text="Current Supplier Price in Supplier Currency" />
+                        <t:Column width="14rem">
+                            <m:Label text="Commodity Lead" />
                             <t:template>
-                                <m:Input value="{oTable>currSupplierPriceSupplierCurrency}"/>
+                                <m:Input value="{oTable>commodityLead}"/>
                             </t:template>
                         </t:Column>
-                        <t:Column width="18rem">
-                            <m:Label text="New Supplier Price in Supplier Currency" />
+                        <t:Column width="14rem">
+                            <m:Label text="Created Date" />
                             <t:template>
-                                <m:Input value="{oTable>newSupplierPriceSupplierCurrency}"/>
+                                <m:Text text="{oTable>createdDate}" wrapping="false" />
                             </t:template>
                         </t:Column>
-                        <t:Column width="7rem">
-                            <m:Label text="Pricing Unit" />
+                        <t:Column width="14rem">
+                            <m:Label text="Project Status" />
                             <t:template>
-                                <m:Text text="{oTable>pricingUnit}" wrapping="false" />
+                                <m:Input value="{oTable>projectStatus}"/>
                             </t:template>
                         </t:Column>
-                        <t:Column width="9rem">
-                            <m:Label text="Supplier Currency" />
-                            <t:template>
-                                <m:Text text="{oTable>supCurrency}" wrapping="false" />
-                            </t:template>
-                        </t:Column>
-                        <t:Column width="6rem">
-                            <m:Label text="UOM Code" />
-                            <t:template>
-                                <m:Text text="{oTable>uomCode}" wrapping="false" />
-                            </t:template>
-                        </t:Column>
-                        <t:Column width="9rem">
-                            <m:Label text="Quantity Receipted" />
-                            <t:template>
-                                <m:Input value="{oTable>quantityRecieved}"/>
-                            </t:template>
-                        </t:Column>
-                        <t:Column width="20rem">
-                            <m:Label text="Original Total Extended Standard Material Cost" />
-                            <t:template>
-                                <m:Text text="{oTable>origSupplierNum}" wrapping="false" />
-                            </t:template>
-                        </t:Column>
-                        <t:Column width="18rem">
-                            <m:Label text="New Total Extended Standard Material Cost" />
-                            <t:template>
-                                <m:Text text="{oTable>totalCostCurrSup}" wrapping="false" />
-                            </t:template>
-                        </t:Column>
-                        <t:Column width="6rem">
-                            <m:Label text="Total" />
-                            <t:template>
-                                <m:Text text="{oTable>totalCostNewSup}" wrapping="false" />
-                            </t:template>
-                        </t:Column>
+                        
                     </t:columns>
                 </t:Table>
             </m:VBox>

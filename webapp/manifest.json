@@ -107,7 +107,7 @@
                 "async": true,
                 "viewPath": "com.svg.cwispm.view",
                 "controlAggregation": "pages",
-                "controlId": "side_Navigation_Content",
+                "controlId": "app",
                 "clearControlAggregation": false
             },
             "routes": [

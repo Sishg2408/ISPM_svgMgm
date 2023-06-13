@@ -13,7 +13,7 @@ sap.ui.define(
             tableData:function(){
                 var that = this;
                 var oTable = this.getOwnerComponent().getModel("oTable"),
-                    url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/getAllProjectItm";
+                    url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/getAllProjectHdr";
                 jQuery.ajax({
                     method: "GET",
                     url: url,

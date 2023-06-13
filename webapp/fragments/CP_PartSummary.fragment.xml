@@ -65,41 +65,27 @@
                 <t:Column width="18rem">
                     <m:Label text="Original Total Extended Standard Material Cost" />
                     <t:template>
-                        <m:Text id="idOriginalCost" text="{parts:['oTable>priceSuppCurr','oTable>quantity'], formatter:'.formatter.originalMaterial'}" wrapping="false" />
+                        <m:Text id="idOriginalCost" text="{parts:['oTable>priceSuppCurr','oTable>quantity'], formatter:'.formatter.origMaterialCost'}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="18rem">
                     <m:Label text="New Total Extended Standard Material Cost" />
                     <t:template>
-                        <m:Text text="{parts:['oTable>newSupply','oTable>quantity'], formatter:'.formatter.newMaterial'}" wrapping="false" />
+                        <m:Text text="{parts:['oTable>newSupply','oTable>quantity'], formatter:'.formatter.newMaterialCost'}" wrapping="false" />
                     </t:template>
                 </t:Column>
                 <t:Column width="9rem">
                     <m:Label text="Total Savings" />
                     <t:template>
-                        <m:Text text="" wrapping="false" />
+                        <m:ObjectNumber number="{parts:['oTable>priceSuppCurr','oTable>quantity','oTable>newSupply'], formatter:'.formatter.totalSavings'}" 
+                           state="{parts:['oTable>priceSuppCurr','oTable>quantity','oTable>newSupply'], formatter:'.formatter.profitcolor'}"/>
                     </t:template>
                 </t:Column>
-
-
-
-
-
             </t:columns>
-            <!-- <items>
-                <t:ColumnListItem>
-                    <cells>
-                       
-                        
-
-                    </cells>
-                </t:ColumnListItem>
-            </items> -->
         </t:Table>
         <m:HBox visible="{= ${oAppModel>/Mode} === 'CREATE' ? true : false}">
             <m:Button text="{i18n>ADD}" icon="sap-icon://add" press="onAddMaterial" class="sigBtnDefault sapUiSmallMarginEnd" type="Default"/>
         </m:HBox>
     </m:VBox>
-
 
 </core:FragmentDefinition>

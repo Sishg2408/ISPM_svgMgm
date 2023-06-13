@@ -71,7 +71,7 @@
             </VBox>
             <VBox>
                 <Label text="Created Date" class="sigLabel" required="false" />
-                <DatePicker value="{NewShipTo>/ShippingDate}" id="idCreatedDate" valueFormat="dd-MM-yyyy" displayFormat="dd-MM-yyyy" class="sigDatePicker" placeholder="Enter {i18n>ShippingDate}" editable="{parts:['oCommonModel>/taskName'], formatter:'.formatter.isEditForFillingForm'}" />
+                <DatePicker id="idCreatedDate" valueFormat="yyyy-MM-dd" displayFormat="yyyy-MM-dd" class="sigDatePicker" placeholder="Enter {i18n>ShippingDate}" editable="{parts:['oCommonModel>/taskName'], formatter:'.formatter.isEditForFillingForm'}"/>
             </VBox>
             <VBox>
                 <Label text="Initiative Type" class="sigLabel"/>
