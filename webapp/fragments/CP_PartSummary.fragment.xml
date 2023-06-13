@@ -29,7 +29,11 @@
                 <t:Column width="18rem">
                     <m:Label text="Current Supplier Price in Supplier Currency" />
                     <t:template>
+<<<<<<< HEAD
                         <m:Text text="{oTable>priceSuppCurr}" wrapping="false" />
+=======
+                         <m:Text text="{oTable>priceSuppCurr}" id="pricenewsupply" wrapping="false" />
+>>>>>>> b1f6f534486a37defb39178801431a74f3719495
                     </t:template>
                 </t:Column>
                 <t:Column width="18rem">
@@ -65,7 +69,11 @@
                 <t:Column width="18rem">
                     <m:Label text="Original Total Extended Standard Material Cost" />
                     <t:template>
+<<<<<<< HEAD
                         <m:Text id="idOriginalCost" text="{parts:['oTable>priceSuppCurr','oTable>quantity'], formatter:'.formatter.origMaterialCost'}" wrapping="false" />
+=======
+                        <m:Text text="{parts:['oTable>priceSuppCurr','oTable>quantity'], formatter:'.formatter.originalMat'}" wrapping="false" />
+>>>>>>> b1f6f534486a37defb39178801431a74f3719495
                     </t:template>
                 </t:Column>
                 <t:Column width="18rem">
@@ -74,11 +82,19 @@
                         <m:Text text="{parts:['oTable>newSupply','oTable>quantity'], formatter:'.formatter.newMaterialCost'}" wrapping="false" />
                     </t:template>
                 </t:Column>
+<<<<<<< HEAD
                 <t:Column width="9rem">
                     <m:Label text="Total Savings" />
                     <t:template>
                         <m:ObjectNumber number="{parts:['oTable>priceSuppCurr','oTable>quantity','oTable>newSupply'], formatter:'.formatter.totalSavings'}" 
                            state="{parts:['oTable>priceSuppCurr','oTable>quantity','oTable>newSupply'], formatter:'.formatter.profitcolor'}"/>
+=======
+                <t:Column width="6rem">
+                    <m:Label text="Total Savings" />
+                    <t:template>
+                        <m:ObjectNumber number="{parts:['oTable>newSupply','oTable>quantity','oTable>priceSuppCurr','oTable>quantity'], formatter:'.formatter.totMat'}" 
+                           state="{parts:['oTable>newSupply','oTable>quantity','oTable>priceSuppCurr','oTable>quantity'], formatter:'.formatter.profitcolor'}"/>
+>>>>>>> b1f6f534486a37defb39178801431a74f3719495
                     </t:template>
                 </t:Column>
             </t:columns>
