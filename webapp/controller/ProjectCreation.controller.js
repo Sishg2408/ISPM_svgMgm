@@ -4,12 +4,13 @@ sap.ui.define([
     "sap/m/MessageBox",
     "sap/ui/model/json/JSONModel",
     "sap/ui/core/Fragment",
-    "com/svg/cwispm/model/formatter"
+    "com/svg/cwispm/model/formatter",
+    "sap/ui/model/Filter"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, MessageToast, MessageBox, JSONModel, Fragment, formatter) {
+    function (Controller, MessageToast, MessageBox, JSONModel, Fragment, formatter, Filter) {
         "use strict";
 
         return Controller.extend("com.svg.cwispm.controller.ProjectCreation", {
@@ -43,7 +44,6 @@ sap.ui.define([
                     createProjPayload;
                 oView.setBusy(true);
 
-
                 createProjPayload = {
                     "projectHdrDto": {
                         "acreIdea": "Yes",
@@ -60,7 +60,7 @@ sap.ui.define([
                         "projectOwner": oView.byId("idProjectOwner").getValue(),
                         "projectStatus": "In Progress",
                         "reasonCode": "NBCR",
-                        "dunsNum": "529302502",
+                        "dunsNum": oView.byId("idSuppName").getSelectedItem().getKey(),
                         "fiscImpFc": 0.0,
                         "fiscImpGc": 0.0,
                         "anImpFc": 0.0,
@@ -168,12 +168,11 @@ sap.ui.define([
 
             // },
 
-            
+
 
             onComboBoxChange: function (oEvent) {
                 var sSelectedKey = oEvent.getSource().getSelectedKey();
                 var oTextField = this.getView().byId("idTextField");
-
                 // set the editable property of the Input control based on the selected key
                 if (sSelectedKey === "yes") {
                     oTextField.setEditable(false);
@@ -183,8 +182,8 @@ sap.ui.define([
             },
             _loadData: function () {
                 // Load data based on current selection in dropdown
-                var oselectedKey = this.byId("idDropdown").getSelectedKey();
-                if (oselectedKey === "1") {
+                var oselectedKey = this.byId("idReasonCode").getSelectedKey();
+                if (oselectedKey === "Incumbent Negotiation") {
                     var data = this.getOwnerComponent().getModel("oLookUpModel").getData()["reasonCodeDesc"];
                     this.getOwnerComponent().getModel("Milestone").setProperty("/reasonCodeDesc", data);
                     // this.getView().byId("idTable").setModel(oLookUpModel);
@@ -196,6 +195,16 @@ sap.ui.define([
 
             onChange: function (oEvent) {
                 this._loadData();
+            },
+            
+            
+            onSelectSuppName: function (oEvent) {
+                var oView = this.getView();
+                var selectedKey = oView.byId("idSuppName").getSelectedItem().getKey();
+
+                // Call the API with the selected key
+                this.oPartSummary(selectedKey);
+                
             },
             onDateChange: function (oEvent) {
                 var odate = this.getOwnerComponent().getModel("Milestone").getData();
@@ -230,19 +239,20 @@ sap.ui.define([
                 this.getOwnerComponent().getModel("MaterialList").setProperty("/Materials", materialListTableData);
             },
 
-            oPartSummary: function (oEvent) {
+            oPartSummary: function (selectedKey) {
                 var that = this,
                     //var oTableModel = this.oTableModel;
+                    supName=selectedKey,
                     oTableModel = this.getOwnerComponent().getModel("oTable"),
-                    url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/getPartsDataBySupplierNumber?supplierNum=TA0017";
-
-
+                    
+                    url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/getPartsDataBySupplierNumber?supplierNum=" + supName;
                 jQuery.ajax({
                     url: url,
                     method: "GET",
                     success: function (data) {
                         oTableModel.setProperty("/getPartsDataBySupplierNumber", data);
                         // oTableModel.refresh();
+                        
                     },
                     error: function (error) { }
                 });

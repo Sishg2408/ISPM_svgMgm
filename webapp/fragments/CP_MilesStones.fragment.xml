@@ -6,14 +6,14 @@
         <VBox>
             <Label text="Reason Code" class="sigLabel"/>
             <ComboBox id="idReasonCode" width="100%" change="onChange" showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/reasonCode}" >
-                <core:ListItem key="{oLookUpModel>key}" text="{oLookUpModel>option}" additionalText=""/>
+                <core:ListItem key="{oLookUpModel>key}" text="{oLookUpModel>option}" />
             </ComboBox>
         </VBox>
         <ToolbarSpacer/>
         <VBox>
             <Label text="Parent Supplier Name" class="sigLabel"/>
-            <ComboBox width="100%" selectionChange="onSelectPrimaryPlant"  showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/supplierName}">
-                <core:ListItem  text="{oLookUpModel>data}"/>
+            <ComboBox id="idSuppName" width="100%" selectionChange="onSelectSuppName"  showSecondaryValues="true" filterSecondaryValues="true" class="sigComboBox" items="{oLookUpModel>/supplierName}">
+                <core:ListItem key="{oLookUpModel>key}" text="{oLookUpModel>data}"/>
             </ComboBox>
         </VBox>
         <VBox>
