@@ -4,7 +4,7 @@
     <Toolbar>
         <ToolbarSpacer/>
         <Button text="Cancel" type="Default" class="sigBtnDefault" press="onCancelProjectSave"/>
-        <Button text="Save" type="Emphasized" class="sigBtnEmphasized"  press="onCreateNewProj" />
+        <Button text="Save" type="Emphasized" class="sigBtnEmphasized" visible="{oButtonmodel>/SaveButtonVisible}" press="onCreateNewProj" />
         <Button text="Next" type="Emphasized" class="sigBtnEmphasized" visible="{oButtonmodel>/nextButtonVisible}" press="onNEXT" />
         <!-- <Button text="{i18n>SAVE_MAT_LIST}" type="Emphasized" class="sigBtnEmphasized" visible="{parts:['oAppModel>/CreateProjSelectedTab','Visibility>/hasTaskId'], formatter:'com.materialManagement.materialmanagement.model.formatter.getVisibleforMatList'}" press="onSaveMaterialList"/>
         <Button text="{i18n>SAVE_MAT_DETAILS}" type="Emphasized" class="sigBtnEmphasized" visible="{parts:['oAppModel>/CreateProjSelectedTab','Visibility>/hasTaskId'], formatter:'com.materialManagement.materialmanagement.model.formatter.getVisibleforMatDetails'}" press="onSaveMaterialDetails"/>
