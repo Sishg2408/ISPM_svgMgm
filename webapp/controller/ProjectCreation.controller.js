@@ -22,6 +22,10 @@ sap.ui.define([
                 this.getOwnerComponent().getModel("Milestone").setProperty("/reasonCodeDesc", data);
                 this.getOwnerComponent().getModel("PartSummary");
                 this.oPartSummary();
+                var oButtonmodel = this.getOwnerComponent().getModel("oButtonmodel");
+                    this.oButtonmodel = oButtonmodel;
+                    oButtonmodel.setProperty("/SaveButtonVisible", false);
+                    oButtonmodel.setProperty("/nextButtonVisible", true);
 
 
             },
@@ -132,7 +136,11 @@ sap.ui.define([
                         // oAppModel.setProperty("/CreateProjSelectedTab", "MatList");
                         oView.setBusy(false);
                         MessageBox.success(msg, {
-                            title: "Project Creation"
+                            title: "Project Creation",
+                            action: [MessageBox.Action.OK],
+                            onClose: function (sAction) {
+                              window.parent.location.reload();
+                            }
                         });
                     },
                     error: function (error) {
@@ -251,13 +259,23 @@ sap.ui.define([
               
                 if (selectedIndex !== -1 && selectedIndex < aItems.length - 1) {
                   var nextItem = aItems[selectedIndex + 1]; 
-                  oIconTabBar.setSelectedKey(nextItem.getKey()); 
+                  oIconTabBar.setSelectedKey(nextItem.getKey());
+                  var oButtonmodel = this.getOwnerComponent().getModel("oButtonmodel");
+                    this.oButtonmodel = oButtonmodel;
+                    oButtonmodel.setProperty("/SaveButtonVisible", false); 
                 }
+                // if (selectedIndex == aItems.length -1){
+                //     var oButtonmodel = this.getOwnerComponent().getModel("oButtonmodel");
+                //     this.oButtonmodel = oButtonmodel;
+                //     oButtonmodel.setProperty("/SaveButtonVisible", false);
+                // }
                 if (selectedIndex == aItems.length -2){
                     var oButtonmodel = this.getOwnerComponent().getModel("oButtonmodel");
                     this.oButtonmodel = oButtonmodel;
+                    oButtonmodel.setProperty("/SaveButtonVisible", true);
                     oButtonmodel.setProperty("/nextButtonVisible", false);
                 }
+              
               },
               validateForm: function (requiredInputs) {
                 var _self = this;
