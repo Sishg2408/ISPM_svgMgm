@@ -25,13 +25,7 @@ sap.ui.define([
 
             },
             onCreateNewProj: function (oEvent) {
-                //validation
-                // var requiredInputs = ['idProjectOwner', 'idProjectName', 'idCnfFact', 'idPPVgen', 'idInBudget', 'idProjectCreator', 'idQualitylead', 'idPCOlead', 'idCommoditylead', 'idEnglead'];
-                // var passedValidation = this.validateForm(requiredInputs);
-                // if (passedValidation === false) {
-                //     MessageBox.error("Please fill all fields")
-                //     return false;
-                // }
+                
                 var url = "https://savingsmanagement.cfapps.eu10-004.hana.ondemand.com/saveAllProjectDetails",
                     that = this,
                     oView = this.getView(),
@@ -151,24 +145,6 @@ sap.ui.define([
 
 
             },
-            // validateForm: function (requiredInputs) {
-            //     var _self = this;
-            //     var valid = true;
-            //     requiredInputs.forEach(function (input) {
-            //         var sInput = _self.getView().byId(input);
-            //         if (sInput.getValue() == "" || sInput.getValue() == undefined) {
-            //             valid = false;
-            //             sInput.setValueState("Error");
-            //         }
-            //         else {
-            //             sInput.setValueState("None");
-            //         }
-            //     });
-            //     return valid;
-
-            // },
-
-            
 
             onComboBoxChange: function (oEvent) {
                 var sSelectedKey = oEvent.getSource().getSelectedKey();
@@ -249,6 +225,13 @@ sap.ui.define([
 
             },
             onNEXT: function() {
+                //validation
+                var requiredInputs = ['idProjectOwner', 'idProjectName', 'idCnfFact', 'idPPVgen', 'idInBudget', 'idProjectCreator', 'idQualitylead', 'idPCOlead', 'idCommoditylead', 'idEnglead'];
+                var passedValidation = this.validateForm(requiredInputs);
+                if (passedValidation === false) {
+                    MessageBox.error("Please fill all fields")
+                    return false;
+                }
                 var oIconTabBar = this.byId("CreateProjectIconTab"); 
                 var aItems = oIconTabBar.getItems(); 
                 var selectedKey = oIconTabBar.getSelectedKey(); 
@@ -266,6 +249,33 @@ sap.ui.define([
                     oButtonmodel.setProperty("/nextButtonVisible", false);
                 }
               },
+              validateForm: function (requiredInputs) {
+                var _self = this;
+                var valid = true;
+                requiredInputs.forEach(function (input) {
+                    var sInput = _self.getView().byId(input);
+                    if (sInput.getValue() == "" || sInput.getValue() == undefined) {
+                        valid = false;
+                        sInput.setValueState("Error");
+                    }
+                    else {
+                        sInput.setValueState("None");
+                    }
+                });
+                return valid;
+
+            }
+            //   onCreateProjTabSelect: function(oEvent){
+            //     var sKey = oEvent.getSource().getSelectedKey();
+
+            //     var projectHeader = this.getView().byId("projectHeader");
+            //     var milestone = this.getView().byId("milesStone");
+
+            //     if(sKey === "tab1")
+            //     {
+
+            //     }
+            //   }
 
 
 
